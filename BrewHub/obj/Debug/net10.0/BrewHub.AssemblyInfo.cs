@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BrewHub")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+53779128d3cf55e13c02f3c9b44f0b44a18200bc")]
 [assembly: System.Reflection.AssemblyProductAttribute("BrewHub")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BrewHub")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

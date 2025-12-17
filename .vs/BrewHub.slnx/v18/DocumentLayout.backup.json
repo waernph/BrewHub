@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FDF8F8A5-F12C-4388-9F2E-67C6BFCC60EC}|BrewHub\\BrewHub.csproj|c:\\users\\waern\\documents\\dotnet\\dotnet_forts\\inl\u00E4mningsuppgifter\\brewhub\\brewhub\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FDF8F8A5-F12C-4388-9F2E-67C6BFCC60EC}|BrewHub\\BrewHub.csproj|solutionrelative:brewhub\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D8FDA511-3893-1A73-6F16-03E75062C432}|BrewHub\\BrewHub.csproj|c:\\users\\waern\\documents\\dotnet\\dotnet_forts\\inl\u00E4mningsuppgifter\\brewhub\\brewhub\\data\\entities\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D8FDA511-3893-1A73-6F16-03E75062C432}|BrewHub\\BrewHub.csproj|solutionrelative:brewhub\\data\\entities\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D8FDA511-3893-1A73-6F16-03E75062C432}|BrewHub\\BrewHub.csproj|c:\\users\\waern\\documents\\dotnet\\dotnet_forts\\inl\u00E4mningsuppgifter\\brewhub\\brewhub\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D8FDA511-3893-1A73-6F16-03E75062C432}|BrewHub\\BrewHub.csproj|solutionrelative:brewhub\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,21 +18,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 10,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Program.cs",
-              "RelativeDocumentMoniker": "BrewHub\\Program.cs",
-              "ToolTip": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Program.cs",
-              "RelativeToolTip": "BrewHub\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-17T18:26:59.65Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
@@ -68,6 +59,32 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "test.cs",
+              "DocumentMoniker": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Data\\Entities\\test.cs",
+              "RelativeDocumentMoniker": "BrewHub\\Data\\Entities\\test.cs",
+              "ToolTip": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Data\\Entities\\test.cs",
+              "RelativeToolTip": "BrewHub\\Data\\Entities\\test.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-17T18:46:20.831Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Program.cs",
+              "RelativeDocumentMoniker": "BrewHub\\Program.cs",
+              "ToolTip": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Program.cs",
+              "RelativeToolTip": "BrewHub\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-17T18:26:59.65Z",
+              "EditorCaption": ""
             }
           ]
         },
