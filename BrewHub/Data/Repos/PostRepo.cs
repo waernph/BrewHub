@@ -26,7 +26,7 @@ namespace BrewHub.Data.Repos
 
         public Post GetPostById(int id)
         {
-            Post ? post = _context.Posts
+            Post post = _context.Posts
                 .Include(p => p.User)
                 .Include(p => p.Category)
                 .AsNoTracking()
