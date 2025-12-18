@@ -15,8 +15,6 @@ namespace BrewHub.Data.Entities
         [Required]
         [StringLength(100)]
         public string Email { get; set; }
-        public List<Post> Posts { get; set; }
-        public List<Comment> Comments { get; set; }
 
     }
 }

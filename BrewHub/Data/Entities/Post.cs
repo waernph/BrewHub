@@ -11,9 +11,10 @@ namespace BrewHub.Data.Entities
         [Required]
         [StringLength(5000)]
         public string PostBody { get; set; }
-        public Category Category { get; set; }
-        public User User { get; set; }
         public DateTime PostCreatedDate { get; } = DateTime.Now;
         public List<Comment> Comments { get; set; }
+        public User User { get; set; }
+        public Category Category { get; set; }
+
     }
 }

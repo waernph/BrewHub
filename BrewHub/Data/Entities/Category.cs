@@ -7,6 +7,5 @@ namespace BrewHub.Data.Entities
         public int CategoryId { get; set; }
         [StringLength(100)]
         public string CategoryName { get; set; }
-        public List<Post> Posts { get; set; }
     }
 }

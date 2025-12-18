@@ -3,16 +3,19 @@ using BrewHub.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace BrewHub.Data.migrations
+namespace BrewHub.Data.Migrations
 {
     [DbContext(typeof(BrewHubContext))]
-    partial class BrewHubContextModelSnapshot : ModelSnapshot
+    [Migration("20251218103355_working_on_relations_in_DB")]
+    partial class working_on_relations_in_DB
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -55,7 +58,7 @@ namespace BrewHub.Data.migrations
                     b.Property<int?>("PostId")
                         .HasColumnType("int");
 
-                    b.Property<int>("UserId")
+                    b.Property<int?>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("CommentID");
@@ -134,25 +137,21 @@ namespace BrewHub.Data.migrations
                         .WithMany("Comments")
                         .HasForeignKey("PostId");
 
-                    b.HasOne("BrewHub.Data.Entities.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
+                    b.HasOne("BrewHub.Data.Entities.User", null)
+                        .WithMany("Comments")
+                        .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("BrewHub.Data.Entities.Post", b =>
                 {
                     b.HasOne("BrewHub.Data.Entities.Category", "Category")
-                        .WithMany()
+                        .WithMany("Posts")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("BrewHub.Data.Entities.User", "User")
-                        .WithMany()
+                        .WithMany("Posts")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -162,9 +161,21 @@ namespace BrewHub.Data.migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("BrewHub.Data.Entities.Category", b =>
+                {
+                    b.Navigation("Posts");
+                });
+
             modelBuilder.Entity("BrewHub.Data.Entities.Post", b =>
                 {
                     b.Navigation("Comments");
+                });
+
+            modelBuilder.Entity("BrewHub.Data.Entities.User", b =>
+                {
+                    b.Navigation("Comments");
+
+                    b.Navigation("Posts");
                 });
 #pragma warning restore 612, 618
         }

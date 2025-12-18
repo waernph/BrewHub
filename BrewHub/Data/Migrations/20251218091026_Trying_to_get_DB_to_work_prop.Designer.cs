@@ -3,16 +3,19 @@ using BrewHub.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace BrewHub.Data.migrations
+namespace BrewHub.Data.Migrations
 {
     [DbContext(typeof(BrewHubContext))]
-    partial class BrewHubContextModelSnapshot : ModelSnapshot
+    [Migration("20251218091026_Trying_to_get_DB_to_work_prop")]
+    partial class Trying_to_get_DB_to_work_prop
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -49,18 +52,13 @@ namespace BrewHub.Data.migrations
 
                     b.Property<string>("CommentText")
                         .IsRequired()
-                        .HasMaxLength(3000)
-                        .HasColumnType("nvarchar(3000)");
+                        .HasMaxLength(2000)
+                        .HasColumnType("nvarchar(2000)");
 
-                    b.Property<int?>("PostId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("UserId")
+                    b.Property<int?>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("CommentID");
-
-                    b.HasIndex("PostId");
 
                     b.HasIndex("UserId");
 
@@ -128,31 +126,38 @@ namespace BrewHub.Data.migrations
                     b.ToTable("Users");
                 });
 
+            modelBuilder.Entity("CommentPost", b =>
+                {
+                    b.Property<int>("CommentsCommentID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PostsPostId")
+                        .HasColumnType("int");
+
+                    b.HasKey("CommentsCommentID", "PostsPostId");
+
+                    b.HasIndex("PostsPostId");
+
+                    b.ToTable("CommentPost");
+                });
+
             modelBuilder.Entity("BrewHub.Data.Entities.Comment", b =>
                 {
-                    b.HasOne("BrewHub.Data.Entities.Post", null)
+                    b.HasOne("BrewHub.Data.Entities.User", null)
                         .WithMany("Comments")
-                        .HasForeignKey("PostId");
-
-                    b.HasOne("BrewHub.Data.Entities.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
+                        .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("BrewHub.Data.Entities.Post", b =>
                 {
                     b.HasOne("BrewHub.Data.Entities.Category", "Category")
-                        .WithMany()
+                        .WithMany("Posts")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("BrewHub.Data.Entities.User", "User")
-                        .WithMany()
+                        .WithMany("Posts")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -162,9 +167,31 @@ namespace BrewHub.Data.migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("BrewHub.Data.Entities.Post", b =>
+            modelBuilder.Entity("CommentPost", b =>
+                {
+                    b.HasOne("BrewHub.Data.Entities.Comment", null)
+                        .WithMany()
+                        .HasForeignKey("CommentsCommentID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BrewHub.Data.Entities.Post", null)
+                        .WithMany()
+                        .HasForeignKey("PostsPostId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("BrewHub.Data.Entities.Category", b =>
+                {
+                    b.Navigation("Posts");
+                });
+
+            modelBuilder.Entity("BrewHub.Data.Entities.User", b =>
                 {
                     b.Navigation("Comments");
+
+                    b.Navigation("Posts");
                 });
 #pragma warning restore 612, 618
         }
