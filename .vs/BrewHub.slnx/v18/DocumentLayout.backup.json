@@ -3,12 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D8FDA511-3893-1A73-6F16-03E75062C432}|BrewHub\\BrewHub.csproj|c:\\users\\waern\\documents\\dotnet\\dotnet_forts\\inl\u00E4mningsuppgifter\\brewhub\\brewhub\\data\\entities\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D8FDA511-3893-1A73-6F16-03E75062C432}|BrewHub\\BrewHub.csproj|solutionrelative:brewhub\\data\\entities\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Data\\Migrations\\20251218073304_init_migration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BrewHub\\Data\\Migrations\\20251218073304_init_migration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D8FDA511-3893-1A73-6F16-03E75062C432}|BrewHub\\BrewHub.csproj|c:\\users\\waern\\documents\\dotnet\\dotnet_forts\\inl\u00E4mningsuppgifter\\brewhub\\brewhub\\data\\entities\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D8FDA511-3893-1A73-6F16-03E75062C432}|BrewHub\\BrewHub.csproj|solutionrelative:brewhub\\data\\entities\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D8FDA511-3893-1A73-6F16-03E75062C432}|BrewHub\\BrewHub.csproj|c:\\users\\waern\\documents\\dotnet\\dotnet_forts\\inl\u00E4mningsuppgifter\\brewhub\\brewhub\\data\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D8FDA511-3893-1A73-6F16-03E75062C432}|BrewHub\\BrewHub.csproj|solutionrelative:brewhub\\data\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D8FDA511-3893-1A73-6F16-03E75062C432}|BrewHub\\BrewHub.csproj|c:\\users\\waern\\documents\\dotnet\\dotnet_forts\\inl\u00E4mningsuppgifter\\brewhub\\brewhub\\data\\entities\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D8FDA511-3893-1A73-6F16-03E75062C432}|BrewHub\\BrewHub.csproj|solutionrelative:brewhub\\data\\entities\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Data\\Migrations\\20251218073052_init_migration_FixedErrors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BrewHub\\Data\\Migrations\\20251218073052_init_migration_FixedErrors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D8FDA511-3893-1A73-6F16-03E75062C432}|BrewHub\\BrewHub.csproj|c:\\users\\waern\\documents\\dotnet\\dotnet_forts\\inl\u00E4mningsuppgifter\\brewhub\\brewhub\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D8FDA511-3893-1A73-6F16-03E75062C432}|BrewHub\\BrewHub.csproj|solutionrelative:brewhub\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D8FDA511-3893-1A73-6F16-03E75062C432}|BrewHub\\BrewHub.csproj|c:\\users\\waern\\documents\\dotnet\\dotnet_forts\\inl\u00E4mningsuppgifter\\brewhub\\brewhub\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{D8FDA511-3893-1A73-6F16-03E75062C432}|BrewHub\\BrewHub.csproj|solutionrelative:brewhub\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D8FDA511-3893-1A73-6F16-03E75062C432}|BrewHub\\BrewHub.csproj|c:\\users\\waern\\documents\\dotnet\\dotnet_forts\\inl\u00E4mningsuppgifter\\brewhub\\brewhub\\data\\brewhubcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D8FDA511-3893-1A73-6F16-03E75062C432}|BrewHub\\BrewHub.csproj|solutionrelative:brewhub\\data\\brewhubcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D8FDA511-3893-1A73-6F16-03E75062C432}|BrewHub\\BrewHub.csproj|c:\\users\\waern\\documents\\dotnet\\dotnet_forts\\inl\u00E4mningsuppgifter\\brewhub\\brewhub\\data\\entities\\post.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D8FDA511-3893-1A73-6F16-03E75062C432}|BrewHub\\BrewHub.csproj|solutionrelative:brewhub\\data\\entities\\post.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,8 +46,60 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "20251218073304_init_migration.cs",
+              "DocumentMoniker": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Data\\Migrations\\20251218073304_init_migration.cs",
+              "RelativeDocumentMoniker": "BrewHub\\Data\\Migrations\\20251218073304_init_migration.cs",
+              "ToolTip": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Data\\Migrations\\20251218073304_init_migration.cs",
+              "RelativeToolTip": "BrewHub\\Data\\Migrations\\20251218073304_init_migration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T07:33:04.289Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "20251218073052_init_migration_FixedErrors.cs",
+              "DocumentMoniker": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Data\\Migrations\\20251218073052_init_migration_FixedErrors.cs",
+              "RelativeDocumentMoniker": "BrewHub\\Data\\Migrations\\20251218073052_init_migration_FixedErrors.cs",
+              "ToolTip": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Data\\Migrations\\20251218073052_init_migration_FixedErrors.cs",
+              "RelativeToolTip": "BrewHub\\Data\\Migrations\\20251218073052_init_migration_FixedErrors.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T07:30:52.426Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "BrewHubContext.cs",
+              "DocumentMoniker": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Data\\BrewHubContext.cs",
+              "RelativeDocumentMoniker": "BrewHub\\Data\\BrewHubContext.cs",
+              "ToolTip": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Data\\BrewHubContext.cs",
+              "RelativeToolTip": "BrewHub\\Data\\BrewHubContext.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAYAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T07:22:23.677Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\appsettings.json",
+              "RelativeDocumentMoniker": "BrewHub\\appsettings.json",
+              "ToolTip": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\appsettings.json",
+              "RelativeToolTip": "BrewHub\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-12-18T06:40:38.654Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
@@ -62,26 +142,65 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "test.cs",
-              "DocumentMoniker": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Data\\Entities\\test.cs",
-              "RelativeDocumentMoniker": "BrewHub\\Data\\Entities\\test.cs",
-              "ToolTip": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Data\\Entities\\test.cs",
-              "RelativeToolTip": "BrewHub\\Data\\Entities\\test.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Comment.cs",
+              "DocumentMoniker": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Data\\Entities\\Comment.cs",
+              "RelativeDocumentMoniker": "BrewHub\\Data\\Entities\\Comment.cs",
+              "ToolTip": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Data\\Entities\\Comment.cs",
+              "RelativeToolTip": "BrewHub\\Data\\Entities\\Comment.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwAYAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-17T18:46:20.831Z",
+              "WhenOpened": "2025-12-18T06:27:22.317Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
+              "Title": "Category.cs",
+              "DocumentMoniker": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Data\\Entities\\Category.cs",
+              "RelativeDocumentMoniker": "BrewHub\\Data\\Entities\\Category.cs",
+              "ToolTip": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Data\\Entities\\Category.cs",
+              "RelativeToolTip": "BrewHub\\Data\\Entities\\Category.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T06:24:55.924Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Post.cs",
+              "DocumentMoniker": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Data\\Entities\\Post.cs",
+              "RelativeDocumentMoniker": "BrewHub\\Data\\Entities\\Post.cs",
+              "ToolTip": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Data\\Entities\\Post.cs",
+              "RelativeToolTip": "BrewHub\\Data\\Entities\\Post.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAgwAsAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T06:18:12.297Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Data\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "BrewHub\\Data\\Entities\\User.cs",
+              "ToolTip": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Data\\Entities\\User.cs",
+              "RelativeToolTip": "BrewHub\\Data\\Entities\\User.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAA7wBAAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T06:17:43.026Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Program.cs",
               "RelativeDocumentMoniker": "BrewHub\\Program.cs",
               "ToolTip": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Program.cs",
               "RelativeToolTip": "BrewHub\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-17T18:26:59.65Z",
               "EditorCaption": ""
