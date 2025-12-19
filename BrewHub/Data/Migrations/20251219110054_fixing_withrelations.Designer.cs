@@ -8,11 +8,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace BrewHub.Data.Migrations
+namespace BrewHub.Data.migrations
 {
     [DbContext(typeof(BrewHubContext))]
-    [Migration("20251218090240_Added_FK")]
-    partial class Added_FK
+    [Migration("20251219110054_fixing_withrelations")]
+    partial class fixing_withrelations
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -44,24 +44,24 @@ namespace BrewHub.Data.Migrations
 
             modelBuilder.Entity("BrewHub.Data.Entities.Comment", b =>
                 {
-                    b.Property<int>("CommentID")
+                    b.Property<int>("CommentId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CommentID"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CommentId"));
 
                     b.Property<string>("CommentText")
                         .IsRequired()
-                        .HasMaxLength(2000)
-                        .HasColumnType("nvarchar(2000)");
+                        .HasMaxLength(5000)
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("PostId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("UserId")
+                    b.Property<int>("UserId")
                         .HasColumnType("int");
 
-                    b.HasKey("CommentID");
+                    b.HasKey("CommentId");
 
                     b.HasIndex("PostId");
 
@@ -79,9 +79,6 @@ namespace BrewHub.Data.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PostId"));
 
                     b.Property<int>("CategoryId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CommentId")
                         .HasColumnType("int");
 
                     b.Property<string>("PostBody")
@@ -121,8 +118,8 @@ namespace BrewHub.Data.Migrations
 
                     b.Property<string>("Password")
                         .IsRequired()
-                        .HasMaxLength(25)
-                        .HasColumnType("nvarchar(25)");
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
 
                     b.Property<string>("UserName")
                         .IsRequired()
@@ -142,11 +139,15 @@ namespace BrewHub.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("BrewHub.Data.Entities.User", null)
-                        .WithMany("Comments")
-                        .HasForeignKey("UserId");
+                    b.HasOne("BrewHub.Data.Entities.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Post");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("BrewHub.Data.Entities.Post", b =>
@@ -158,7 +159,7 @@ namespace BrewHub.Data.Migrations
                         .IsRequired();
 
                     b.HasOne("BrewHub.Data.Entities.User", "User")
-                        .WithMany("Posts")
+                        .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -176,13 +177,6 @@ namespace BrewHub.Data.Migrations
             modelBuilder.Entity("BrewHub.Data.Entities.Post", b =>
                 {
                     b.Navigation("Comments");
-                });
-
-            modelBuilder.Entity("BrewHub.Data.Entities.User", b =>
-                {
-                    b.Navigation("Comments");
-
-                    b.Navigation("Posts");
                 });
 #pragma warning restore 612, 618
         }

@@ -8,11 +8,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace BrewHub.Data.Migrations
+namespace BrewHub.Data.migrations
 {
     [DbContext(typeof(BrewHubContext))]
-    [Migration("20251218083254_Changed_CommentText_Length")]
-    partial class Changed_CommentText_Length
+    [Migration("20251219105015_fixet_relations")]
+    partial class fixet_relations
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -44,24 +44,24 @@ namespace BrewHub.Data.Migrations
 
             modelBuilder.Entity("BrewHub.Data.Entities.Comment", b =>
                 {
-                    b.Property<int>("CommentID")
+                    b.Property<int>("CommentId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CommentID"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CommentId"));
 
                     b.Property<string>("CommentText")
                         .IsRequired()
-                        .HasMaxLength(2000)
-                        .HasColumnType("nvarchar(2000)");
+                        .HasMaxLength(5000)
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("PostId")
+                    b.Property<int>("PostId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("UserId")
+                    b.Property<int>("UserId")
                         .HasColumnType("int");
 
-                    b.HasKey("CommentID");
+                    b.HasKey("CommentId");
 
                     b.HasIndex("PostId");
 
@@ -118,8 +118,8 @@ namespace BrewHub.Data.Migrations
 
                     b.Property<string>("Password")
                         .IsRequired()
-                        .HasMaxLength(25)
-                        .HasColumnType("nvarchar(25)");
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
 
                     b.Property<string>("UserName")
                         .IsRequired()
@@ -133,13 +133,21 @@ namespace BrewHub.Data.Migrations
 
             modelBuilder.Entity("BrewHub.Data.Entities.Comment", b =>
                 {
-                    b.HasOne("BrewHub.Data.Entities.Post", null)
+                    b.HasOne("BrewHub.Data.Entities.Post", "Post")
                         .WithMany("Comments")
-                        .HasForeignKey("PostId");
+                        .HasForeignKey("PostId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.HasOne("BrewHub.Data.Entities.User", null)
+                    b.HasOne("BrewHub.Data.Entities.User", "User")
                         .WithMany("Comments")
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Post");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("BrewHub.Data.Entities.Post", b =>

@@ -1,4 +1,7 @@
+using BrewHub.Core.Interfaces;
+using BrewHub.Core.Services;
 using BrewHub.Data.Interfaces;
+using BrewHub.Data.Profiles;
 using BrewHub.Data.Repos;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,6 +14,15 @@ builder.Services.AddDbContext<BrewHub.Data.BrewHubContext>(options =>
 builder.Services.AddScoped<IPostRepo, PostRepo>();
 builder.Services.AddScoped<IUserRepo, UserRepo>();
 builder.Services.AddScoped<ICommentRepo, CommentRepo>();
+
+builder.Services.AddScoped<IPostService, PostService>();
+builder.Services.AddScoped<ICommentService, CommentService>();
+builder.Services.AddScoped<IUserService, UserService>();
+
+builder.Services.AddAutoMapper(cfg =>
+{
+    cfg.AddProfile<UserProfile>();
+}, typeof(UserProfile));
 
 var app = builder.Build();
 app.UseRouting();

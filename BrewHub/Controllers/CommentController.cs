@@ -1,4 +1,5 @@
-﻿using BrewHub.Data.Interfaces;
+﻿using BrewHub.Core.Interfaces;
+using BrewHub.Data.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,34 +9,36 @@ namespace BrewHub.Controllers
     [ApiController]
     public class CommentController : ControllerBase
     {
-        private readonly ICommentRepo _commentRepo;
+        private readonly ICommentService _repo;
 
-        public CommentController(ICommentRepo commentRepo)
+        public CommentController(ICommentService repo)
         {
-            _commentRepo = commentRepo;
+            _repo = repo;
         }
+
         [HttpPost("add")]
-        public IActionResult AddComment(int PostId, int UserId, string inputCommentText)
+        public IActionResult AddComment(string inputCommentText, int userId, int postId)
         {
-            _commentRepo.AddComment(PostId, UserId, inputCommentText);
+            _repo.NewComment(inputCommentText, userId, postId);
             return Ok("Comment added successfully!");
         }
+
         [HttpPut("update")]
         public IActionResult UpdateComment(int CommentId, string NewCommentText)
         {
-            _commentRepo.UpdateComment(CommentId, NewCommentText);
+            _repo.UpdateComment(CommentId, NewCommentText);
             return Ok("Comment updated successfully!");
         }
         [HttpDelete("delete")]
         public IActionResult DeleteComment(int CommentId)
         {
-            _commentRepo.DeleteComment(CommentId);
+            _repo.DeleteComment(CommentId);
             return Ok("Comment deleted successfully!");
         }
         [HttpGet("bypost")]
         public IActionResult GetComments(int PostId)
         {
-            var comments = _commentRepo.GetComments(PostId);
+            var comments = _repo.GetComments(PostId);
             return Ok(comments);
         }
     }

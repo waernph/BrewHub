@@ -1,5 +1,5 @@
-﻿using BrewHub.Data.Interfaces;
-using Microsoft.AspNetCore.Http;
+﻿using AutoMapper;
+using BrewHub.Core.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BrewHub.Controllers
@@ -8,21 +8,29 @@ namespace BrewHub.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        private readonly IUserRepo _newUserRepo;
-        public UserController(IUserRepo UserRepo)
+        private readonly IUserService _service;
+
+        public UserController(IUserService service)
         {
-            _newUserRepo = UserRepo;
+            _service = service;
         }
+
         [HttpPost("register")]
         public IActionResult RegisterUser(string username, string password, string email)
         {
-            _newUserRepo.AddNewUser(username, password, email);
+            _service.AddNewUser(username, password, email);
             return Ok("Brewer registered successfully!");
         }
         [HttpPut("update")]
         public IActionResult UpdateUser(string oldUsername, string oldPassword, string newUsername, string newPassword, string newEmail)
         {
             return Ok();
+        }
+
+        [HttpGet]
+        public IActionResult GetUsers()
+        {
+            return Ok(_service.GetUsers());
         }
     }
 }

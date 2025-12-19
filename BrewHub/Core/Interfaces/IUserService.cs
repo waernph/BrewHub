@@ -1,11 +1,10 @@
 ﻿using BrewHub.Data.Entities;
 
-namespace BrewHub.Data.Interfaces
+namespace BrewHub.Core.Interfaces
 {
-    public interface IUserRepo
+    public interface IUserService
     {
         public void AddNewUser(string username, string password, string email);
         public List<User> GetUsers();
-        
     }
 }

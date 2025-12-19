@@ -1,8 +1,8 @@
 ﻿using BrewHub.Data.Entities;
 
-namespace BrewHub.Data.Interfaces
+namespace BrewHub.Core.Interfaces
 {
-    public interface IPostRepo
+    public interface IPostService
     {
         public List<Post> GetAllPosts();
         public List<Post> GetPostBySearch(string searchInput);

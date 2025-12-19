@@ -1,4 +1,7 @@
-﻿using BrewHub.Data.Interfaces;
+﻿using BrewHub.Core.Interfaces;
+using BrewHub.Data.Entities;
+using BrewHub.Data.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,27 +11,33 @@ namespace BrewHub.Controllers
     [ApiController]
     public class PostController : ControllerBase
     {
-        private readonly IPostRepo _postRepo;
+        private readonly IPostService _service;
 
-        public PostController(IPostRepo postRepo)
+        public PostController(IPostService service)
         {
-            _postRepo = postRepo;
+            _service = service;
         }
+
         [HttpGet("all")]
         public IActionResult GetAllPosts()
         {
-            var posts = _postRepo.GetAllPosts();
-            return Ok(posts);
+            return Ok(_service.GetAllPosts());
         }
-        [HttpGet("{id}")]
-        public IActionResult GetPostById(int id)
+
+
+        [HttpGet("{searchString}")]
+        public IActionResult SearchPost(string searchString)
         {
-            var post = _postRepo.GetPostById(id);
-            if (post == null)
-            {
-                return NotFound("Post not found.");
-            }
-            return Ok(post);
+            var result = _service.GetPostBySearch(searchString);
+            return Ok(result);
         }
+
+        [HttpPost("newPost")]
+        public IActionResult NewPost(int userId, int categoryId, string postTitle, string postBody)
+        {
+            _service.NewPost(postTitle, postBody, userId, categoryId);
+            return Ok("New post created successfully!");
+        }
+
     }
 }

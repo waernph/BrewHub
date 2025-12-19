@@ -5,11 +5,17 @@ namespace BrewHub.Data.Entities
     public class Comment
     {
 
-        public int CommentID { get; set; }
+        public int CommentId { get; set; }
         [Required]
-        [StringLength(3000)]
+        [StringLength(5000)]
         public string CommentText { get; set; }
-        public DateTime CommentCreatedDate { get; } = DateTime.Now;
+        public DateTime CommentCreatedDate { get; set; } = DateTime.Now;
+
+        public int PostId { get; set; }
+        public Post Post { get; set; }
+        public int UserId { get; set; }
         public User User { get; set; }
+
+
     }
 }

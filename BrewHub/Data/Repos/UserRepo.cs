@@ -22,5 +22,11 @@ namespace BrewHub.Data.Repos
             _context.Users.Add(user);
             _context.SaveChanges();
         }
+
+        public List<User> GetUsers()
+        {
+            var users = _context.Users.ToList();
+            return users;
+        }
     }
 }

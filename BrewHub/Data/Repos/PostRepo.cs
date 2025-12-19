@@ -17,21 +17,37 @@ namespace BrewHub.Data.Repos
         public List<Post> GetAllPosts()
         {
             var allPosts = _context.Posts
-                .Include(p => p.User)
+                .Include(p => p.Comments)
                 .Include(p => p.Category)
-                .AsNoTracking()
+                .Include(p => p.User)
                 .ToList();
             return allPosts;
         }
 
-        public Post GetPostById(int id)
+        public List<Post> GetPostBySearch(string searchInput)
         {
-            Post post = _context.Posts
-                .Include(p => p.User)
-                .Include(p => p.Category)
-                .AsNoTracking()
-                .FirstOrDefault(p => p.PostId == id);
-            return post;
+            var result = _context.Posts.Where(p => p.PostBody.Contains(searchInput) || p.PostTitle.Contains(searchInput))
+                        .Include(p => p.Comments)
+                        .ToList();
+
+            return result;
+        }
+
+        public void NewPost(string postTitle, string postBody, int userId, int categoryId)
+        {
+            var user = _context.Users.Find(userId);
+            var category = _context.Categories.Find(categoryId);
+            {
+                Post newPost = new Post
+                {
+                    User = user,
+                    Category = category,
+                    PostTitle = postTitle,
+                    PostBody = postBody
+                };
+                _context.Posts.Add(newPost);
+                _context.SaveChanges();
+            }
         }
     }
 }
