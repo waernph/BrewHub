@@ -1,8 +1,4 @@
 ﻿using BrewHub.Core.Interfaces;
-using BrewHub.Data.Entities;
-using BrewHub.Data.Interfaces;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BrewHub.Controllers

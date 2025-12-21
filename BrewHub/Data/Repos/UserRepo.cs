@@ -1,4 +1,5 @@
-﻿using BrewHub.Data.Entities;
+﻿using AutoMapper;
+using BrewHub.Data.Entities;
 using BrewHub.Data.Interfaces;
 using Microsoft.IdentityModel.Tokens;
 

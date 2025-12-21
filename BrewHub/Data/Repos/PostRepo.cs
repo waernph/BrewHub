@@ -18,8 +18,6 @@ namespace BrewHub.Data.Repos
         {
             var allPosts = _context.Posts
                 .Include(p => p.Comments)
-                .Include(p => p.Category)
-                .Include(p => p.User)
                 .ToList();
             return allPosts;
         }
@@ -27,7 +25,6 @@ namespace BrewHub.Data.Repos
         public List<Post> GetPostBySearch(string searchInput)
         {
             var result = _context.Posts.Where(p => p.PostBody.Contains(searchInput) || p.PostTitle.Contains(searchInput))
-                        .Include(p => p.Comments)
                         .ToList();
 
             return result;

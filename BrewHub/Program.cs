@@ -6,7 +6,12 @@ using BrewHub.Data.Repos;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddAutoMapper(cfg =>
+{
+    cfg.AddProfile<UserProfile>();
+}, typeof(UserProfile));
 builder.Services.AddControllers();
+    
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<BrewHub.Data.BrewHubContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
@@ -19,10 +24,7 @@ builder.Services.AddScoped<IPostService, PostService>();
 builder.Services.AddScoped<ICommentService, CommentService>();
 builder.Services.AddScoped<IUserService, UserService>();
 
-builder.Services.AddAutoMapper(cfg =>
-{
-    cfg.AddProfile<UserProfile>();
-}, typeof(UserProfile));
+
 
 var app = builder.Build();
 app.UseRouting();
