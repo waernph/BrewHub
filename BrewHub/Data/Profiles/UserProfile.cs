@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using BrewHub.Data.DTO;
 using BrewHub.Data.Entities;
-using System;
+
 namespace BrewHub.Data.Profiles
 {
     public class UserProfile : Profile

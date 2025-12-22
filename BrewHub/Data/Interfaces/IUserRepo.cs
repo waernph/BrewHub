@@ -1,4 +1,5 @@
-﻿using BrewHub.Data.Entities;
+﻿using BrewHub.Data.DTO;
+using BrewHub.Data.Entities;
 
 namespace BrewHub.Data.Interfaces
 {
