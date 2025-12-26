@@ -24,7 +24,7 @@ namespace BrewHub.Core.Services
 
         public async Task<List<UserDTO>> GetUsers()
         {
-            var user = _repo.GetUsers();
+            var user = await _repo.GetUsers();
             return _mapper.Map<List<UserDTO>>(user);
 
         }

@@ -19,7 +19,7 @@ namespace BrewHub.Core.Services
 
         public async Task<List<PostDTO>> GetAllPosts()
         {
-            var post = _repo.GetAllPosts();
+            var post = await _repo.GetAllPosts();
             return _mapper.Map<List<PostDTO>>(post);
         }
 

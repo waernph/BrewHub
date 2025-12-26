@@ -17,14 +17,14 @@ namespace BrewHub.Controllers
         [HttpGet("all")]
         public async Task<IActionResult> GetAllPosts()
         {
-            return Ok(_service.GetAllPosts());
+            return Ok(await _service.GetAllPosts());
         }
 
 
         [HttpGet("{searchString}")]
         public async Task<IActionResult> SearchPost(string searchString)
         {
-            var result = _service.GetPostBySearch(searchString);
+            var result = await _service.GetPostBySearch(searchString);
             return Ok(result);
         }
 
