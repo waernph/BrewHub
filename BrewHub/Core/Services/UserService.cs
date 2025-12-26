@@ -17,12 +17,12 @@ namespace BrewHub.Core.Services
             _mapper = mapper;
         }
 
-        public void AddNewUser(string username, string password, string email)
+        public async Task AddNewUser(string username, string password, string email)
         {
-            _repo.AddNewUser(username, password, email);
+            await _repo.AddNewUser(username, password, email);
         }
 
-        public List<UserDTO> GetUsers()
+        public async Task<List<UserDTO>> GetUsers()
         {
             var user = _repo.GetUsers();
             return _mapper.Map<List<UserDTO>>(user);

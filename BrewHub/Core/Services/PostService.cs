@@ -6,8 +6,6 @@ using BrewHub.Data.Interfaces;
 
 namespace BrewHub.Core.Services
 {
-    
-
     public class PostService : IPostService
     {
         private readonly IPostRepo _repo;
@@ -19,21 +17,20 @@ namespace BrewHub.Core.Services
             _mapper = mapper;
         }
 
-        public List<PostDTO> GetAllPosts()
+        public async Task<List<PostDTO>> GetAllPosts()
         {
             var post = _repo.GetAllPosts();
             return _mapper.Map<List<PostDTO>>(post);
-
         }
 
-        public List<Post> GetPostBySearch(string searchInput)
+        public async Task<List<Post>> GetPostBySearch(string searchInput)
         {
-            return _repo.GetPostBySearch(searchInput);
+            return await _repo.GetPostBySearch(searchInput);
         }
 
-        public void NewPost(string postTitle, string postBody, int userId, int categoryId)
+        public async Task NewPost(string postTitle, string postBody, int userId, int categoryId)
         {
-            _repo.NewPost(postTitle, postBody, userId, categoryId);
+            await _repo.NewPost(postTitle, postBody, userId, categoryId);
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace BrewHub.Data.DTO
+﻿using BrewHub.Data.Entities;
+
+namespace BrewHub.Data.DTO
 {
     public class PostDTO
     {

@@ -5,8 +5,8 @@ namespace BrewHub.Data.Interfaces
 {
     public interface IUserRepo
     {
-        public void AddNewUser(string username, string password, string email);
-        public List<User> GetUsers();
+        Task AddNewUser(string username, string password, string email);
+        Task<List<User>> GetUsers();
         
     }
 }

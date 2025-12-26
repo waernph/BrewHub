@@ -4,9 +4,9 @@ namespace BrewHub.Data.Interfaces
 {
     public interface ICommentRepo
     {
-        public void AddComment(int PostId, int UserId, string CommentText);
-        public void UpdateComment(int CommentId, string NewCommentText);
-        public void DeleteComment(int CommentId);
-        public List<Comment> GetComments(int PostId);
+        Task AddComment(int PostId, int UserId, string CommentText);
+        Task UpdateComment(int CommentId, string NewCommentText);
+        Task DeleteComment(int CommentId);
+        Task<List<Comment>> GetComments(int PostId);
     }
 }

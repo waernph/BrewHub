@@ -4,8 +4,8 @@ namespace BrewHub.Data.Interfaces
 {
     public interface IPostRepo
     {
-        public List<Post> GetAllPosts();
-        public List<Post> GetPostBySearch(string searchInput);
-        public void NewPost(string postTitle, string postBody, int userId, int categoryId);
+        Task<List<Post>> GetAllPosts();
+        Task<List<Post>> GetPostBySearch(string searchInput);
+        Task NewPost(string postTitle, string postBody, int userId, int categoryId);
     }
 }

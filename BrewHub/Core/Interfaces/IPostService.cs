@@ -5,8 +5,8 @@ namespace BrewHub.Core.Interfaces
 {
     public interface IPostService
     {
-        public List<PostDTO> GetAllPosts();
-        public List<Post> GetPostBySearch(string searchInput);
-        public void NewPost(string postTitle, string postBody, int userId, int categoryId);
+        Task<List<PostDTO>> GetAllPosts();
+        Task<List<Post>> GetPostBySearch(string searchInput);
+        Task NewPost(string postTitle, string postBody, int userId, int categoryId);
     }
 }

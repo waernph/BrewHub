@@ -14,25 +14,22 @@ namespace BrewHub.Data.Repos
             _context = context;
         }
 
-        public List<Post> GetAllPosts()
+        public async Task<List<Post>> GetAllPosts()
         {
-            var allPosts = _context.Posts
-                .Include(p => p.User)
-                .Include(p => p.Comments)
-                .ToList();
-            return allPosts;
+            var result = _context.Posts.ToList();
+            return result;
         }
 
-        public List<Post> GetPostBySearch(string searchInput)
+        public async Task<List<Post>> GetPostBySearch(string searchInput)
         {
-            var result = _context.Posts.Where(p => p.PostBody.Contains(searchInput) 
+            var result = _context.Posts.Where(p => p.PostBody.Contains(searchInput)
                                                 || p.PostTitle.Contains(searchInput))
                                                 .ToList();
 
             return result;
         }
 
-        public void NewPost(string postTitle, string postBody, int userId, int categoryId)
+        public async Task NewPost(string postTitle, string postBody, int userId, int categoryId)
         {
             var user = _context.Users.Find(userId);
             var category = _context.Categories.Find(categoryId);

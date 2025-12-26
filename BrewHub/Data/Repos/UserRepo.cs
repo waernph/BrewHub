@@ -13,7 +13,7 @@ namespace BrewHub.Data.Repos
         {
             _context = context;
         }
-        public void AddNewUser(string username, string password, string email)
+        public async Task AddNewUser(string username, string password, string email)
         {
             var user = new User
             {
@@ -25,7 +25,7 @@ namespace BrewHub.Data.Repos
             _context.SaveChanges();
         }
 
-        public List<User> GetUsers()
+        public async Task<List<User>> GetUsers()
         {
             var users = _context.Users.ToList();
             return users;

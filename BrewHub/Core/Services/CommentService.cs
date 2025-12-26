@@ -13,24 +13,24 @@ namespace BrewHub.Core.Services
             _repo = repo;
         }
 
-        public void DeleteComment(int CommentId)
+        public async Task DeleteComment(int CommentId)
         {
-            _repo.DeleteComment(CommentId);
+            await _repo.DeleteComment(CommentId);
         }
 
-        public List<Comment> GetComments(int PostId)
+        public async Task<List<Comment>> GetComments(int PostId)
         {
-            return _repo.GetComments(PostId);
+            return await _repo.GetComments(PostId);
         }
 
-        public void NewComment(string commentBody, int userId, int postId)
+        public async Task NewComment(string commentBody, int userId, int postId)
         {
-            _repo.AddComment(postId, userId, commentBody);
+            await _repo.AddComment(postId, userId, commentBody);
         }
 
-        public void UpdateComment(int CommentId, string NewCommentText)
+        public async Task UpdateComment(int CommentId, string NewCommentText)
         {
-            _repo.UpdateComment(CommentId, NewCommentText);
+            await _repo.UpdateComment(CommentId, NewCommentText);
         }
     }
 }
