@@ -15,23 +15,23 @@ namespace BrewHub.Controllers
         }
 
         [HttpGet("all")]
-        public IActionResult GetAllPosts()
+        public async Task<IActionResult> GetAllPosts()
         {
             return Ok(_service.GetAllPosts());
         }
 
 
         [HttpGet("{searchString}")]
-        public IActionResult SearchPost(string searchString)
+        public async Task<IActionResult> SearchPost(string searchString)
         {
             var result = _service.GetPostBySearch(searchString);
             return Ok(result);
         }
 
         [HttpPost("newPost")]
-        public IActionResult NewPost(int userId, int categoryId, string postTitle, string postBody)
+        public async Task<IActionResult> NewPost(int userId, int categoryId, string postTitle, string postBody)
         {
-            _service.NewPost(postTitle, postBody, userId, categoryId);
+            await _service.NewPost(postTitle, postBody, userId, categoryId);
             return Ok("New post created successfully!");
         }
 

@@ -16,19 +16,19 @@ namespace BrewHub.Controllers
         }
 
         [HttpPost("register")]
-        public IActionResult RegisterUser(string username, string password, string email)
+        public async Task<IActionResult> RegisterUser(string username, string password, string email)
         {
-            _service.AddNewUser(username, password, email);
+            await _service.AddNewUser(username, password, email);
             return Ok("Brewer registered successfully!");
         }
         [HttpPut("update")]
-        public IActionResult UpdateUser(string oldUsername, string oldPassword, string newUsername, string newPassword, string newEmail)
+        public async Task<IActionResult> UpdateUser(string oldUsername, string oldPassword, string newUsername, string newPassword, string newEmail)
         {
             return Ok();
         }
 
         [HttpGet]
-        public IActionResult GetUsers()
+        public async Task<IActionResult> GetUsers()
         {
             return Ok(_service.GetUsers());
         }

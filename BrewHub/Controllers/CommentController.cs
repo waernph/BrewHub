@@ -17,29 +17,28 @@ namespace BrewHub.Controllers
         }
 
         [HttpPost("add")]
-        public IActionResult AddComment(string inputCommentText, int userId, int postId)
+        public async Task<IActionResult> AddComment(string inputCommentText, int userId, int postId)
         {
-            _repo.NewComment(inputCommentText, userId, postId);
+            await _repo.NewComment(inputCommentText, userId, postId);
             return Ok("Comment added successfully!");
         }
 
         [HttpPut("update")]
-        public IActionResult UpdateComment(int CommentId, string NewCommentText)
+        public async Task<IActionResult> UpdateComment(int CommentId, string NewCommentText)
         {
-            _repo.UpdateComment(CommentId, NewCommentText);
+            await _repo.UpdateComment(CommentId, NewCommentText);
             return Ok("Comment updated successfully!");
         }
         [HttpDelete("delete")]
-        public IActionResult DeleteComment(int CommentId)
+        public async Task<IActionResult> DeleteComment(int CommentId)
         {
-            _repo.DeleteComment(CommentId);
+            await _repo.DeleteComment(CommentId);
             return Ok("Comment deleted successfully!");
         }
         [HttpGet("bypost")]
-        public IActionResult GetComments(int PostId)
+        public async Task<IActionResult> GetComments(int PostId)
         {
-            var comments = _repo.GetComments(PostId);
-            return Ok(comments);
+            return Ok(await _repo.GetComments(PostId));
         }
     }
 }
