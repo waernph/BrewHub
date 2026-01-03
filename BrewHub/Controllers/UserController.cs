@@ -16,12 +16,15 @@ namespace BrewHub.Controllers
             _service = service;
         }
 
+        [AllowAnonymous]
         [HttpPost("register")]
         public async Task<IActionResult> RegisterUser(string username, string password, string email)
         {
             await _service.AddNewUser(username, password, email);
             return Ok("Brewer registered successfully!");
         }
+
+        [Authorize]
         [HttpPut("update")]
         public async Task<IActionResult> UpdateUser(string oldUsername, string oldPassword, string newUsername, string newPassword, string newEmail)
         {

@@ -14,6 +14,18 @@ namespace BrewHub.Data.Repos
             _context = context;
         }
 
+        public Task<bool> DeletePost(int postId)
+        {
+            var postToDelete = _context.Posts.Find(postId);
+            if (postToDelete != null)
+            {
+                _context.Posts.Remove(postToDelete);
+                _context.SaveChanges();
+                return Task.FromResult(true);
+            }
+            return Task.FromResult(false);
+        }
+
         public async Task<List<Post>> GetAllPosts()
         {
             var result = _context.Posts.ToListAsync();
@@ -44,6 +56,14 @@ namespace BrewHub.Data.Repos
                 await _context.Posts.AddAsync(newPost);
                 await _context.SaveChangesAsync();
             }
+        }
+
+        public async Task<bool> PostExists(int postId)
+        {
+            var postExists = await _context.Posts.AnyAsync(p => p.PostId == postId);
+            if (postExists)
+                return postExists;
+            return false;
         }
     }
 }

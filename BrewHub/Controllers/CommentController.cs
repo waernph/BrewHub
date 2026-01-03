@@ -1,5 +1,6 @@
 ﻿using BrewHub.Core.Interfaces;
 using BrewHub.Data.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,6 +17,7 @@ namespace BrewHub.Controllers
             _service = service;
         }
 
+        [Authorize]
         [HttpPost("add")]
         public async Task<IActionResult> AddComment(string inputCommentText, int userId, int postId)
         {
@@ -23,12 +25,14 @@ namespace BrewHub.Controllers
             return Ok("Comment added successfully!");
         }
 
+        [Authorize]
         [HttpPut("update")]
         public async Task<IActionResult> UpdateComment(int CommentId, string NewCommentText)
         {
             await _service.UpdateComment(CommentId, NewCommentText);
             return Ok("Comment updated successfully!");
         }
+        [Authorize]
         [HttpDelete("delete")]
         public async Task<IActionResult> DeleteComment(int CommentId)
         {

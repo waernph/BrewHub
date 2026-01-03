@@ -42,5 +42,13 @@ namespace BrewHub.Data.Repos
 
             return await commentsById;
         }
+
+        public async Task DeleteCommentsByPostId(int PostId)
+        {
+            var comments = _context.Comments;
+            var commentsById = await comments.Where(c => c.PostId == PostId).ToListAsync();
+            _context.Comments.RemoveRange(commentsById);
+            await _context.SaveChangesAsync();
+        }
     }
 }

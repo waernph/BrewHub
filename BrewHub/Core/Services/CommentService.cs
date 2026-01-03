@@ -32,5 +32,10 @@ namespace BrewHub.Core.Services
         {
             await _repo.UpdateComment(CommentId, NewCommentText);
         }
+
+        public async Task DeleteCommentsByPostId(int PostId)
+        {
+            await _repo.DeleteCommentsByPostId(PostId);
+        }
     }
 }

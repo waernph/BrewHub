@@ -8,6 +8,7 @@ namespace BrewHub.Core.Interfaces
         Task UpdateComment(int CommentId, string NewCommentText);
         Task DeleteComment(int CommentId);
         Task<List<Comment>> GetComments(int PostId);
+        Task DeleteCommentsByPostId(int PostId);
 
     }
 }

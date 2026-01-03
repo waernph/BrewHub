@@ -17,6 +17,12 @@ namespace BrewHub.Core.Services
             _mapper = mapper;
         }
 
+        public async Task<bool> DeletePost(int postId)
+        {
+            
+            return await _repo.DeletePost(postId);
+        }
+
         public async Task<List<PostDTO>> GetAllPosts()
         {
             var post = await _repo.GetAllPosts();
@@ -31,6 +37,11 @@ namespace BrewHub.Core.Services
         public async Task NewPost(string postTitle, string postBody, int userId, int categoryId)
         {
             await _repo.NewPost(postTitle, postBody, userId, categoryId);
+        }
+
+        public async Task<bool> PostExists(int postId)
+        {
+            return await _repo.PostExists(postId);
         }
     }
 }
