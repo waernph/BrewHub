@@ -1,4 +1,5 @@
 ﻿using BrewHub.Core.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BrewHub.Controllers
@@ -28,6 +29,7 @@ namespace BrewHub.Controllers
             return Ok(result);
         }
 
+        [Authorize]
         [HttpPost("newPost")]
         public async Task<IActionResult> NewPost(int userId, int categoryId, string postTitle, string postBody)
         {

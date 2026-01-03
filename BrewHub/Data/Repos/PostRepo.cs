@@ -16,17 +16,17 @@ namespace BrewHub.Data.Repos
 
         public async Task<List<Post>> GetAllPosts()
         {
-            var result = _context.Posts.ToList();
-            return result;
+            var result = _context.Posts.ToListAsync();
+            return await result;
         }
 
         public async Task<List<Post>> GetPostBySearch(string searchInput)
         {
             var result = _context.Posts.Where(p => p.PostBody.Contains(searchInput)
                                                 || p.PostTitle.Contains(searchInput))
-                                                .ToList();
+                                                .ToListAsync();
 
-            return result;
+            return await result;
         }
 
         public async Task NewPost(string postTitle, string postBody, int userId, int categoryId)
@@ -41,8 +41,8 @@ namespace BrewHub.Data.Repos
                     PostTitle = postTitle,
                     PostBody = postBody
                 };
-                _context.Posts.Add(newPost);
-                _context.SaveChanges();
+                await _context.Posts.AddAsync(newPost);
+                await _context.SaveChangesAsync();
             }
         }
     }

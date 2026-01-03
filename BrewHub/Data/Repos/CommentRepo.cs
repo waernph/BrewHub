@@ -17,30 +17,30 @@ namespace BrewHub.Data.Repos
             User user = _context.Users.First(u => u.UserId == UserId);
             var comment = new Comment { CommentText = inputCommentText, User = user, PostId = PostId };
             _context.Comments.Add(comment);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
 
         public async Task DeleteComment(int inputCommentId)
         {
             var comment = _context.Comments.FirstOrDefault(c => c.CommentId == inputCommentId);
             _context.Comments.Remove(comment);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
 
         public async Task UpdateComment(int CommentId, string NewCommentText)
         {
             var comment = _context.Comments.FirstOrDefault(c => c.CommentId == CommentId);
             comment.CommentText = NewCommentText;
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
 
         public async Task<List<Comment>> GetComments(int PostId)
         {
-            var comments = _context.Comments.ToList();
-            var commentsById = comments.Where(c => c.CommentId == PostId).ToList();
+            var comments = _context.Comments;
+            var commentsById = comments.Where(c => c.CommentId == PostId).ToListAsync();
 
 
-            return commentsById;
+            return await commentsById;
         }
     }
 }

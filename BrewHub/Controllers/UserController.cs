@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using BrewHub.Core.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BrewHub.Controllers
@@ -30,7 +31,18 @@ namespace BrewHub.Controllers
         [HttpGet]
         public async Task<IActionResult> GetUsers()
         {
-            return Ok(_service.GetUsers());
+            return Ok(await _service.GetUsers());
+        }
+
+        [AllowAnonymous]
+        [HttpPost("login")]
+        public async Task<IActionResult> Login(string username, string password)
+        {
+            var isValid = await _service.Login(username, password);
+            if (!isValid)
+                return Unauthorized("Invalid username or password");
+
+            return Ok(new { Token = await _service.GenerateToken(username) });
         }
     }
 }

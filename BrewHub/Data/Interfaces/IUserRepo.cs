@@ -7,6 +7,7 @@ namespace BrewHub.Data.Interfaces
     {
         Task AddNewUser(string username, string password, string email);
         Task<List<User>> GetUsers();
+        Task<User> Login(string username);
         
     }
 }

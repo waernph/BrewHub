@@ -9,36 +9,36 @@ namespace BrewHub.Controllers
     [ApiController]
     public class CommentController : ControllerBase
     {
-        private readonly ICommentService _repo;
+        private readonly ICommentService _service;
 
-        public CommentController(ICommentService repo)
+        public CommentController(ICommentService service)
         {
-            _repo = repo;
+            _service = service;
         }
 
         [HttpPost("add")]
         public async Task<IActionResult> AddComment(string inputCommentText, int userId, int postId)
         {
-            await _repo.NewComment(inputCommentText, userId, postId);
+            await _service.NewComment(inputCommentText, userId, postId);
             return Ok("Comment added successfully!");
         }
 
         [HttpPut("update")]
         public async Task<IActionResult> UpdateComment(int CommentId, string NewCommentText)
         {
-            await _repo.UpdateComment(CommentId, NewCommentText);
+            await _service.UpdateComment(CommentId, NewCommentText);
             return Ok("Comment updated successfully!");
         }
         [HttpDelete("delete")]
         public async Task<IActionResult> DeleteComment(int CommentId)
         {
-            await _repo.DeleteComment(CommentId);
+            await _service.DeleteComment(CommentId);
             return Ok("Comment deleted successfully!");
         }
         [HttpGet("bypost")]
         public async Task<IActionResult> GetComments(int PostId)
         {
-            return Ok(await _repo.GetComments(PostId));
+            return Ok(await _service.GetComments(PostId));
         }
     }
 }
