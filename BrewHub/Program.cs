@@ -9,7 +9,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
-
+var apiKey = builder.Configuration["ApiKey"];  //Secret key för JWT
 //automapper
 builder.Services.AddAutoMapper(cfg =>
 {
@@ -32,7 +32,7 @@ builder.Services.AddAuthentication(opt =>
             ValidateIssuerSigningKey = true,
             ValidIssuer = "http://localhost:5217",
             ValidAudience = "http://localhost:5217",
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("mykey1234567&%%485734579453%&//1255362"))
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(apiKey))
         };
     });
 builder.Services.AddControllers();

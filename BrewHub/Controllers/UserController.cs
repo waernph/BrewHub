@@ -28,7 +28,7 @@ namespace BrewHub.Controllers
         [HttpPut("update")]
         public async Task<IActionResult> UpdateUser(string oldUsername, string oldPassword, string newUsername, string newPassword, string newEmail)
         {
-            return Ok();
+            return Ok("Brewer updated");
         }
 
         [HttpGet]

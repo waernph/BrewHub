@@ -28,7 +28,12 @@ namespace BrewHub.Data.Repos
 
         public async Task<List<Post>> GetAllPosts()
         {
-            var result = _context.Posts.ToListAsync();
+            var result = _context.Posts
+                .Include(p => p.Comments)
+                .Include(p => p.User)
+                .ToListAsync();
+
+                        
             return await result;
         }
 

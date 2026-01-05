@@ -44,7 +44,6 @@ namespace BrewHub.Core.Services
         {
             List<Claim> claims = new List<Claim>();
             //claims.Add(new Claim(ClaimTypes.Role, "Admin"));
-
             var IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("mykey1234567&%%485734579453%&//1255362"));
             var signinCredentials = new SigningCredentials(IssuerSigningKey, SecurityAlgorithms.HmacSha256);
 

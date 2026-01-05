@@ -18,10 +18,6 @@ namespace BrewHub.Core.Services
             await _repo.DeleteComment(CommentId);
         }
 
-        public async Task<List<Comment>> GetComments(int PostId)
-        {
-            return await _repo.GetComments(PostId);
-        }
 
         public async Task NewComment(string commentBody, int userId, int postId)
         {

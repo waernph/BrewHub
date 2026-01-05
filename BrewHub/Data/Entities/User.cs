@@ -6,6 +6,7 @@ namespace BrewHub.Data.Entities
     public class User
     {
         public int UserId { get; set; }
+        public string Role { get; set; } = "User";
 
         [StringLength(100)]
         public string UserName { get; set; } = null!;

@@ -1,4 +1,5 @@
 ﻿using BrewHub.Core.Interfaces;
+using BrewHub.Data.DTO;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -21,7 +22,8 @@ namespace BrewHub.Controllers
         [HttpGet("all")]
         public async Task<IActionResult> GetAllPosts()
         {
-            return Ok(await _service.GetAllPosts());
+            var posts = await _service.GetAllPosts();
+            return Ok(posts);
         }
 
         [AllowAnonymous]

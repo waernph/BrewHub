@@ -9,12 +9,8 @@ namespace BrewHub.Data.Profiles
         public UserProfile()
         {
             CreateMap<User, UserDTO>()
-                .ForMember(dest => dest.Id,
-                    opt => opt.MapFrom(src => src.UserId))
                 .ForMember(dest => dest.Username,
-                    opt => opt.MapFrom(src => src.UserName))
-                .ForMember(dest => dest.Email,
-                    opt => opt.MapFrom(src => src.Email));
+                    opt => opt.MapFrom(src => src.UserName));
         }
     }
 }

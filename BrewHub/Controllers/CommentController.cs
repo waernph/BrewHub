@@ -39,10 +39,6 @@ namespace BrewHub.Controllers
             await _service.DeleteComment(CommentId);
             return Ok("Comment deleted successfully!");
         }
-        [HttpGet("bypost")]
-        public async Task<IActionResult> GetComments(int PostId)
-        {
-            return Ok(await _service.GetComments(PostId));
-        }
+
     }
 }
