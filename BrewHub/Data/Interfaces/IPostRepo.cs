@@ -4,10 +4,11 @@ namespace BrewHub.Data.Interfaces
 {
     public interface IPostRepo
     {
-        Task<bool> DeletePost(int postId);
+        Task DeletePost(int postId);
         Task<List<Post>> GetAllPosts();
         Task<List<Post>> GetPostBySearch(string searchInput);
         Task NewPost(string postTitle, string postBody, int userId, int categoryId);
-        Task<bool> PostExists(int postId);
+        Task<Post> PostExists(int postId);
+        Task UpdatePost(string postTitle, string postBody, int categoryId, int postId);
     }
 }

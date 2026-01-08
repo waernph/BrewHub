@@ -14,26 +14,24 @@ namespace BrewHub.Data.Repos
             _context = context;
         }
 
-        public Task<bool> DeletePost(int postId)
+        public async Task DeletePost(int postId)
         {
-            var postToDelete = _context.Posts.Find(postId);
-            if (postToDelete != null)
-            {
-                _context.Posts.Remove(postToDelete);
-                _context.SaveChanges();
-                return Task.FromResult(true);
-            }
-            return Task.FromResult(false);
+            var postToDelete = _context.Posts.Find(postId)!;
+            _context.Posts.Remove(postToDelete);
+            _context.SaveChanges();
         }
 
         public async Task<List<Post>> GetAllPosts()
         {
             var result = _context.Posts
-                .Include(p => p.Comments)
                 .Include(p => p.User)
+                .Include(p => p.Category)
+                .Include(p => p.Comments)
+                    .ThenInclude(c => c.User)
+
                 .ToListAsync();
 
-                        
+
             return await result;
         }
 
@@ -63,12 +61,28 @@ namespace BrewHub.Data.Repos
             }
         }
 
-        public async Task<bool> PostExists(int postId)
+        public async Task<Post> PostExists(int postId)
         {
-            var postExists = await _context.Posts.AnyAsync(p => p.PostId == postId);
-            if (postExists)
-                return postExists;
-            return false;
+            return await _context.Posts.FindAsync(postId);
+        }
+
+        public async Task UpdatePost(string postTitle, string postBody, int categoryId, int postId)
+        {
+            var post = _context.Posts.Find(postId) !;
+            if (postTitle != null)
+            {
+                post.PostTitle = postTitle;
+            }
+            if (postBody != null)
+            {
+                post.PostBody = postBody;
+            }
+            if (categoryId != null)
+            {
+                post.CategoryId = categoryId;
+            }
+            _context.Posts.Update(post);
+            _context.SaveChanges();
         }
     }
 }

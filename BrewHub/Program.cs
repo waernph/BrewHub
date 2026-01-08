@@ -9,7 +9,8 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
-var apiKey = builder.Configuration["ApiKey"];  //Secret key för JWT
+var apiKey = builder.Configuration["ApiKey"] !;  //Secret key för JWT
+string connString =  builder.Configuration["connString"] !;
 //automapper
 builder.Services.AddAutoMapper(cfg =>
 {
@@ -32,14 +33,16 @@ builder.Services.AddAuthentication(opt =>
             ValidateIssuerSigningKey = true,
             ValidIssuer = "http://localhost:5217",
             ValidAudience = "http://localhost:5217",
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(apiKey))
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(apiKey)) //User-Secrets nyckel för JWT
         };
     });
 builder.Services.AddControllers();
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddScoped<IJwtGetter, JwtGetter>();
 
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<BrewHub.Data.BrewHubContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlServer(connString));
 
 builder.Services.AddScoped<IPostRepo, PostRepo>();
 builder.Services.AddScoped<IUserRepo, UserRepo>();
@@ -48,8 +51,6 @@ builder.Services.AddScoped<ICommentRepo, CommentRepo>();
 builder.Services.AddScoped<IPostService, PostService>();
 builder.Services.AddScoped<ICommentService, CommentService>();
 builder.Services.AddScoped<IUserService, UserService>();
-
-
 
 var app = builder.Build();
 //JWT-----------------

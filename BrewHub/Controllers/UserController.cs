@@ -10,10 +10,12 @@ namespace BrewHub.Controllers
     public class UserController : ControllerBase
     {
         private readonly IUserService _service;
+        private readonly IJwtGetter _jwt;
 
-        public UserController(IUserService service)
+        public UserController(IUserService service, IJwtGetter JwtGetter)
         {
             _service = service;
+            _jwt = JwtGetter;
         }
 
         [AllowAnonymous]
@@ -26,8 +28,9 @@ namespace BrewHub.Controllers
 
         [Authorize]
         [HttpPut("update")]
-        public async Task<IActionResult> UpdateUser(string oldUsername, string oldPassword, string newUsername, string newPassword, string newEmail)
+        public async Task<IActionResult> UpdateUser(string oldPassword, string newUsername, string newPassword, string newEmail)
         {
+            var userId = await _jwt.GetLoggedInUserId();
             return Ok("Brewer updated");
         }
 

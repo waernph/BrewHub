@@ -17,10 +17,9 @@ namespace BrewHub.Core.Services
             _mapper = mapper;
         }
 
-        public async Task<bool> DeletePost(int postId)
+        public async Task DeletePost(int postId, int userId)
         {
-            
-            return await _repo.DeletePost(postId);
+            await _repo.DeletePost(postId);
         }
 
         public async Task<List<PostDTO>> GetAllPosts()
@@ -29,9 +28,17 @@ namespace BrewHub.Core.Services
             return _mapper.Map<List<PostDTO>>(post);
         }
 
-        public async Task<List<Post>> GetPostBySearch(string searchInput)
+        public async Task<List<PostDTO>> GetPostBySearch(string searchInput, List<PostDTO> allPosts)
         {
-            return await _repo.GetPostBySearch(searchInput);
+            string input = searchInput.ToLower();
+            var filteredPosts = allPosts.Where(p => p.Title.ToLower().Contains(input)).ToList();
+            return filteredPosts;
+        }
+
+        public async Task<List<PostDTO>> GetPostsByCategory(string searchInput, List<PostDTO> allPosts)
+        {
+            var filteredPosts = allPosts.Where(p => p.Category.Name.ToLower().Contains(searchInput.ToLower())).ToList();
+            return filteredPosts;
         }
 
         public async Task NewPost(string postTitle, string postBody, int userId, int categoryId)
@@ -39,9 +46,23 @@ namespace BrewHub.Core.Services
             await _repo.NewPost(postTitle, postBody, userId, categoryId);
         }
 
-        public async Task<bool> PostExists(int postId)
+        public async Task<Post> PostExists(int postId)
         {
-            return await _repo.PostExists(postId);
+            Post post = await _repo.PostExists(postId);
+
+            if (post != null)
+            {
+                return post;
+            }
+            else
+            {
+                throw new Exception("Post does not exist");
+            }
+        }
+
+        public async Task UpdatePost(string postTitle, string postBody, int categoryId, int postId)
+        {
+            await _repo.UpdatePost(postTitle, postBody, categoryId, postId);
         }
     }
 }

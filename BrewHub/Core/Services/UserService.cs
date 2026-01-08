@@ -14,16 +14,22 @@ namespace BrewHub.Core.Services
     {
         private readonly IUserRepo _repo;
         private readonly IMapper _mapper;
+        private readonly IConfiguration _config;
 
-        public UserService(IUserRepo repo, IMapper mapper)
+        public UserService(IUserRepo repo, IMapper mapper, IConfiguration config)
         {
             _repo = repo;
             _mapper = mapper;
+            _config = config;
         }
 
         public async Task AddNewUser(string username, string password, string email)
         {
             await _repo.AddNewUser(username, password, email);
+        }
+        public async Task UpdateUser(int userId, string oldPassword, string newUsername, string newPassword, string newEmail)
+        {
+            await _repo.UpdateUser(userId, newUsername, newPassword, newEmail);
         }
 
         public async Task<List<UserDTO>> GetUsers()
@@ -42,10 +48,16 @@ namespace BrewHub.Core.Services
         }
         public async Task<string> GenerateToken(string username)
         {
-            List<Claim> claims = new List<Claim>();
-            //claims.Add(new Claim(ClaimTypes.Role, "Admin"));
-            var IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("mykey1234567&%%485734579453%&//1255362"));
+            var user = await _repo.Login(username);
+            var userRole = user.Role;
+            var userId = user.UserId;
+            List <Claim> claims = new List<Claim>();
+            claims.Add(new Claim(ClaimTypes.Role, user.Role));
+            claims.Add(new Claim(ClaimTypes.Name, user.UserName));
+            claims.Add(new Claim(ClaimTypes.UserData, user.UserId.ToString()));
+            var IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["ApiKey"] !));
             var signinCredentials = new SigningCredentials(IssuerSigningKey, SecurityAlgorithms.HmacSha256);
+            
 
             var tokenOptions = new JwtSecurityToken(
                     issuer: "http://localhost:5217",
@@ -53,6 +65,7 @@ namespace BrewHub.Core.Services
                     claims: claims,
                     expires: DateTime.Now.AddMinutes(20),
                     signingCredentials: signinCredentials);
+                
 
             var tokenString = new JwtSecurityTokenHandler().WriteToken(tokenOptions);
 

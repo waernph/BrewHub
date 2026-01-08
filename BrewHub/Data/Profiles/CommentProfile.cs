@@ -12,7 +12,9 @@ namespace BrewHub.Data.Profiles
                 .ForMember(dest => dest.Comments,
                     opt => opt.MapFrom(src => src.CommentText))
                 .ForMember(dest => dest.User,
-                    opt => opt.MapFrom(src => src.User));
+                    opt => opt.MapFrom(src => src.User))
+                .ForMember(dest => dest.Date,
+                    opt => opt.MapFrom(src => src.CommentCreatedDate));
         }
     }
 }

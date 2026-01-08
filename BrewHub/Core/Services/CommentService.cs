@@ -7,26 +7,38 @@ namespace BrewHub.Core.Services
     public class CommentService : ICommentService
     {
         private readonly ICommentRepo _repo;
+        private readonly IPostRepo _postRepo;
 
-        public CommentService(ICommentRepo repo)
+        public CommentService(ICommentRepo repo, IPostRepo postRepo)
         {
             _repo = repo;
+            _postRepo = postRepo;
         }
 
-        public async Task DeleteComment(int CommentId)
+        public async Task DeleteComment(int CommentId, int userId)
         {
-            await _repo.DeleteComment(CommentId);
+            var comment = await _repo.GetCommentById(CommentId);
+            if (comment.UserId == userId)
+                await _repo.DeleteComment(CommentId);
+            else
+                throw new UnauthorizedAccessException("You can only delete your own comments.");
         }
 
 
         public async Task NewComment(string commentBody, int userId, int postId)
         {
+            if(await _postRepo.PostExists(postId) is null)
+                throw new ArgumentException("The post you are trying to comment on does not exist.");
             await _repo.AddComment(postId, userId, commentBody);
         }
 
-        public async Task UpdateComment(int CommentId, string NewCommentText)
+        public async Task UpdateComment(int CommentId, string NewCommentText, int userId)
         {
-            await _repo.UpdateComment(CommentId, NewCommentText);
+            var comment = await _repo.GetCommentById(CommentId);
+            if (comment.UserId == userId)
+                await _repo.UpdateComment(CommentId, NewCommentText);
+            else 
+                throw new UnauthorizedAccessException("You can only update your own comments.");
         }
 
         public async Task DeleteCommentsByPostId(int PostId)

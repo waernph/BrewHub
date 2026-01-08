@@ -15,9 +15,17 @@ namespace BrewHub.Data.Repos
         public async Task AddComment(int PostId, int UserId, string inputCommentText)
         {
             User user = _context.Users.First(u => u.UserId == UserId);
-            var comment = new Comment { CommentText = inputCommentText, User = user, PostId = PostId };
-            _context.Comments.Add(comment);
-            await _context.SaveChangesAsync();
+            Post post = _context.Posts.First(p => p.PostId == PostId);
+            if (post.UserId == UserId)
+            {
+                throw new Exception("Users cannot comment on their own posts.");
+            }
+            else
+            {
+                var comment = new Comment { CommentText = inputCommentText, User = user, PostId = PostId };
+                await _context.Comments.AddAsync(comment);
+                await _context.SaveChangesAsync();
+            }
         }
 
         public async Task DeleteComment(int inputCommentId)
@@ -32,6 +40,11 @@ namespace BrewHub.Data.Repos
             var comment = _context.Comments.FirstOrDefault(c => c.CommentId == CommentId);
             comment.CommentText = NewCommentText;
             await _context.SaveChangesAsync();
+        }
+        public async Task<Comment> GetCommentById(int CommentId)
+        {
+            var comment = await _context.Comments.FirstOrDefaultAsync(c => c.CommentId == CommentId);
+            return comment;
         }
 
         public async Task<List<Comment>> GetComments(int PostId)
