@@ -27,17 +27,16 @@ namespace BrewHub.Core.Services
         {
             await _repo.AddNewUser(username, password, email);
         }
-        public async Task UpdateUser(int userId, string oldPassword, string newUsername, string newPassword, string newEmail)
+        public async Task UpdateUser(int userId, string oldPassword, string? newUsername, string? newPassword, string? newEmail)
         {
-            await _repo.UpdateUser(userId, newUsername, newPassword, newEmail);
+            var user = await _repo.GetUserById(userId);
+            if (oldPassword == user.Password)
+                await _repo.UpdateUser(userId, newUsername, newPassword, newEmail);
+            else
+                throw new UnauthorizedAccessException("Old password does not match.");
         }
 
-        public async Task<List<UserDTO>> GetUsers()
-        {
-            var user = await _repo.GetUsers();
-            return _mapper.Map<List<UserDTO>>(user);
 
-        }
         public async Task<bool> Login(string username, string password)
         {
             var user = await _repo.Login(username);
@@ -72,6 +71,13 @@ namespace BrewHub.Core.Services
             return tokenString;
         }
 
-
+        public async Task DeleteUser(int userId, string password)
+        {
+            var user = await _repo.GetUserById(userId);
+            if (user.Password != password)
+                throw new UnauthorizedAccessException("Password does not match.");           
+            else
+                await _repo.DeleteUser(userId);
+        }
     }
 }

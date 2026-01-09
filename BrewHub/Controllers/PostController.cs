@@ -35,8 +35,12 @@ namespace BrewHub.Controllers
         [HttpGet("search")]
         public async Task<IActionResult> SearchPost(string searchInput)
         {
-            var allPosts = await _service.GetAllPosts();
-            return Ok(await _service.GetPostBySearch(searchInput, allPosts));
+            var filterdPosts = await _service.GetPostBySearch(searchInput);
+            if (filterdPosts.Count == 0)
+            {
+                return NoContent();
+            }
+            return Ok(await _service.GetPostBySearch(searchInput));
         }
 
         [AllowAnonymous]
@@ -48,10 +52,10 @@ namespace BrewHub.Controllers
         }
         [Authorize]
         [HttpPost("newPost")]
-        public async Task<IActionResult> NewPost(int categoryId, string postTitle, string postBody)
+        public async Task<IActionResult> NewPost(string categoryName, string postTitle, string postBody)
         {
             var userId = await _jwtGetter.GetLoggedInUserId();
-            await _service.NewPost(postTitle, postBody, userId, categoryId);
+            await _service.NewPost(postTitle, postBody, userId, categoryName);
             return Ok("New post created successfully!");
         }
 
@@ -62,13 +66,11 @@ namespace BrewHub.Controllers
             var userId = await _jwtGetter.GetLoggedInUserId();
             var post = await _service.PostExists(postId);
             if (post is null)
-            {
-                return NotFound("Post not found.");
-            }
+                return NotFound();
+
             if (post.UserId != userId)
-            {
-                return Forbid("You do not have permission to delete this post.");
-            }
+                return Forbid();
+
             await _commentService.DeleteCommentsByPostId(postId);
             await _service.DeletePost(postId, userId);
             return Ok("Post deleted successfully!");
@@ -76,25 +78,23 @@ namespace BrewHub.Controllers
 
         [Authorize]
         [HttpPut("updatePost")]
-        public async Task<IActionResult> UpdatePost(int postId, string postTitle, string postBody, int categoryId)
+        public async Task<IActionResult> UpdatePost(int postId, string? postTitle, string? postBody, string? categoryName)
         {
             var userId = await _jwtGetter.GetLoggedInUserId();
             var post = await _service.PostExists(postId);
             if (post.UserId == userId && post != null)
             {
-                await _service.UpdatePost(postTitle, postBody, categoryId, postId);
+                await _service.UpdatePost(postTitle, postBody, categoryName, postId);
                 return Ok("Post edited successfully!");
             }
 
-            else if (post.UserId != userId)
-            {
-                return Forbid("You do not have permission to edit this post.");
-            }
-            else
-            {
-                return NotFound("Post not found.");
-            }
+            if (post is null)
+                return NotFound();
 
+            if (post.UserId != userId)
+                return Forbid();
+            
+            return BadRequest();
         }
 
     }

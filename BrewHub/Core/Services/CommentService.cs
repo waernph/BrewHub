@@ -1,6 +1,7 @@
 ﻿using BrewHub.Core.Interfaces;
 using BrewHub.Data.Entities;
 using BrewHub.Data.Interfaces;
+using System.Net;
 
 namespace BrewHub.Core.Services
 {
@@ -20,6 +21,8 @@ namespace BrewHub.Core.Services
             var comment = await _repo.GetCommentById(CommentId);
             if (comment.UserId == userId)
                 await _repo.DeleteComment(CommentId);
+            else if (comment is null)
+                throw new ArgumentException("The comment you are trying to delete does not exist.");
             else
                 throw new UnauthorizedAccessException("You can only delete your own comments.");
         }
@@ -27,17 +30,21 @@ namespace BrewHub.Core.Services
 
         public async Task NewComment(string commentBody, int userId, int postId)
         {
-            if(await _postRepo.PostExists(postId) is null)
+            if (await _postRepo.PostExists(postId) is null)
                 throw new ArgumentException("The post you are trying to comment on does not exist.");
+
             await _repo.AddComment(postId, userId, commentBody);
+            
         }
 
         public async Task UpdateComment(int CommentId, string NewCommentText, int userId)
         {
             var comment = await _repo.GetCommentById(CommentId);
-            if (comment.UserId == userId)
+            if (comment == null)
+                throw new ArgumentException("The comment you are trying to update does not exist.");
+            else if (comment.UserId == userId)
                 await _repo.UpdateComment(CommentId, NewCommentText);
-            else 
+            else
                 throw new UnauthorizedAccessException("You can only update your own comments.");
         }
 

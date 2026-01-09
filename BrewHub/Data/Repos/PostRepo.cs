@@ -1,6 +1,7 @@
 ﻿using BrewHub.Data.Entities;
 using BrewHub.Data.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 
 namespace BrewHub.Data.Repos
@@ -28,26 +29,27 @@ namespace BrewHub.Data.Repos
                 .Include(p => p.Category)
                 .Include(p => p.Comments)
                     .ThenInclude(c => c.User)
-
                 .ToListAsync();
-
-
             return await result;
         }
 
         public async Task<List<Post>> GetPostBySearch(string searchInput)
         {
-            var result = _context.Posts.Where(p => p.PostBody.Contains(searchInput)
-                                                || p.PostTitle.Contains(searchInput))
-                                                .ToListAsync();
-
-            return await result;
+            var result = await _context.Posts
+                                .Include(p => p.User)
+                                .Include(p => p.Category)
+                                .Include(p => p.Comments)
+                                .ThenInclude(c => c.User)
+                                .Where(p => p.PostTitle.ToLower()
+                                .Contains(searchInput.ToLower()))
+                                .ToListAsync();
+            return result;
         }
 
-        public async Task NewPost(string postTitle, string postBody, int userId, int categoryId)
+        public async Task NewPost(string postTitle, string postBody, int userId, string categoryName)
         {
             var user = _context.Users.Find(userId);
-            var category = _context.Categories.Find(categoryId);
+            var category = await _context.Categories.FirstOrDefaultAsync(c => c.CategoryName == categoryName);
             {
                 Post newPost = new Post
                 {
@@ -66,9 +68,12 @@ namespace BrewHub.Data.Repos
             return await _context.Posts.FindAsync(postId);
         }
 
-        public async Task UpdatePost(string postTitle, string postBody, int categoryId, int postId)
+        public async Task UpdatePost(string? postTitle, string? postBody, string? categoryName, int postId)
         {
-            var post = _context.Posts.Find(postId) !;
+            var post = _context.Posts.Find(postId)!;
+
+            var category = _context.Categories.Find(categoryName);
+
             if (postTitle != null)
             {
                 post.PostTitle = postTitle;
@@ -77,9 +82,12 @@ namespace BrewHub.Data.Repos
             {
                 post.PostBody = postBody;
             }
-            if (categoryId != null)
+            if (categoryName != null)
             {
-                post.CategoryId = categoryId;
+                if (category != null)
+                {
+                    post.CategoryId = category.CategoryId;
+                }
             }
             _context.Posts.Update(post);
             _context.SaveChanges();

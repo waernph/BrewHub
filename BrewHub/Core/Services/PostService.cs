@@ -28,11 +28,10 @@ namespace BrewHub.Core.Services
             return _mapper.Map<List<PostDTO>>(post);
         }
 
-        public async Task<List<PostDTO>> GetPostBySearch(string searchInput, List<PostDTO> allPosts)
+        public async Task<List<PostDTO>> GetPostBySearch(string searchInput)
         {
-            string input = searchInput.ToLower();
-            var filteredPosts = allPosts.Where(p => p.Title.ToLower().Contains(input)).ToList();
-            return filteredPosts;
+            var filteredPosts = await _repo.GetPostBySearch(searchInput);
+            return _mapper.Map<List<PostDTO>>(filteredPosts);
         }
 
         public async Task<List<PostDTO>> GetPostsByCategory(string searchInput, List<PostDTO> allPosts)
@@ -41,9 +40,9 @@ namespace BrewHub.Core.Services
             return filteredPosts;
         }
 
-        public async Task NewPost(string postTitle, string postBody, int userId, int categoryId)
+        public async Task NewPost(string postTitle, string postBody, int userId, string categoryName)
         {
-            await _repo.NewPost(postTitle, postBody, userId, categoryId);
+            await _repo.NewPost(postTitle, postBody, userId, categoryName);
         }
 
         public async Task<Post> PostExists(int postId)
@@ -60,9 +59,9 @@ namespace BrewHub.Core.Services
             }
         }
 
-        public async Task UpdatePost(string postTitle, string postBody, int categoryId, int postId)
+        public async Task UpdatePost(string? postTitle, string? postBody, string? categoryName, int postId)
         {
-            await _repo.UpdatePost(postTitle, postBody, categoryId, postId);
+            await _repo.UpdatePost(postTitle, postBody, categoryName, postId);
         }
     }
 }

@@ -22,22 +22,52 @@ namespace BrewHub.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> RegisterUser(string username, string password, string email)
         {
-            await _service.AddNewUser(username, password, email);
-            return Ok("Brewer registered successfully!");
+            try
+            {
+                await _service.AddNewUser(username, password, email);
+                return Ok("Brewer registered successfully!");
+            }
+            catch (InvalidOperationException ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [Authorize]
         [HttpPut("update")]
-        public async Task<IActionResult> UpdateUser(string oldPassword, string newUsername, string newPassword, string newEmail)
+        public async Task<IActionResult> UpdateUser(string oldPassword, string ? newUsername, string ? newPassword, string ? newEmail)
         {
             var userId = await _jwt.GetLoggedInUserId();
-            return Ok("Brewer updated");
+            try 
+            {
+                await _service.UpdateUser(userId, oldPassword, newUsername, newPassword, newEmail);
+                return Ok("Brewer updated");
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                return StatusCode(403, ex.Message);
+            }
+
         }
 
-        [HttpGet]
-        public async Task<IActionResult> GetUsers()
+        [Authorize]
+        [HttpDelete("delete")]
+        public async Task<IActionResult> DeleteUser(string password)
         {
-            return Ok(await _service.GetUsers());
+            var userId = await _jwt.GetLoggedInUserId();
+            try
+            {
+                await _service.DeleteUser(userId, password);
+                return Ok("Brewer deleted successfully");
+            }
+            catch (InvalidOperationException ex) //För få admins
+            {
+                return BadRequest(ex.Message);
+            }
+            catch (UnauthorizedAccessException ex) //fel lösenord
+            {
+                return StatusCode(403, ex.Message);
+            }
         }
 
         [AllowAnonymous]
