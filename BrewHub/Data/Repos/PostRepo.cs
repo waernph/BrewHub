@@ -1,7 +1,6 @@
 ﻿using BrewHub.Data.Entities;
 using BrewHub.Data.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using System.Linq;
 
 
 namespace BrewHub.Data.Repos
@@ -29,8 +28,32 @@ namespace BrewHub.Data.Repos
                 .Include(p => p.Category)
                 .Include(p => p.Comments)
                     .ThenInclude(c => c.User)
+                .AsNoTracking()
                 .ToListAsync();
             return await result;
+        }
+
+        public async Task<List<Post>> GetPostByCategory(string categoryInput)
+        {
+            var categoryName = _context.Categories.Where(c => c.CategoryName == categoryInput).FirstOrDefault();
+            if (categoryName == null)
+            {
+                throw new Exception("No such category. Did you spell it correctly?");
+            }
+            else
+            {
+
+                var result = _context.Posts
+                    .Include(p => p.User)
+                    .Include(p => p.Category)
+                    .Include(p => p.Comments)
+                        .ThenInclude(c => c.User)
+                    .Where(p => p.Category.CategoryName == categoryInput)
+                    .AsNoTracking()
+                    .ToListAsync();
+                return await result;
+            }
+
         }
 
         public async Task<List<Post>> GetPostBySearch(string searchInput)
@@ -42,6 +65,7 @@ namespace BrewHub.Data.Repos
                                 .ThenInclude(c => c.User)
                                 .Where(p => p.PostTitle.ToLower()
                                 .Contains(searchInput.ToLower()))
+                                .AsNoTracking()
                                 .ToListAsync();
             return result;
         }
@@ -50,6 +74,11 @@ namespace BrewHub.Data.Repos
         {
             var user = _context.Users.Find(userId);
             var category = await _context.Categories.FirstOrDefaultAsync(c => c.CategoryName == categoryName);
+            if (category == null)
+            {
+                throw new Exception("No such categoy");
+            }
+            else
             {
                 Post newPost = new Post
                 {

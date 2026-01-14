@@ -34,10 +34,10 @@ namespace BrewHub.Core.Services
             return _mapper.Map<List<PostDTO>>(filteredPosts);
         }
 
-        public async Task<List<PostDTO>> GetPostsByCategory(string searchInput, List<PostDTO> allPosts)
+        public async Task<List<PostDTO>> GetPostsByCategory(string searchInput)
         {
-            var filteredPosts = allPosts.Where(p => p.Category.Name.ToLower().Contains(searchInput.ToLower())).ToList();
-            return filteredPosts;
+            var filteredPosts = await _repo.GetPostByCategory(searchInput);
+            return _mapper.Map<List<PostDTO>>(filteredPosts);
         }
 
         public async Task NewPost(string postTitle, string postBody, int userId, string categoryName)

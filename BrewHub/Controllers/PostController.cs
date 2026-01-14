@@ -1,10 +1,6 @@
 ﻿using BrewHub.Core.Interfaces;
-using BrewHub.Data.DTO;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Storage.Json;
-using Microsoft.IdentityModel.Tokens;
-using System.Security.Claims;
 
 namespace BrewHub.Controllers
 {
@@ -42,21 +38,44 @@ namespace BrewHub.Controllers
             }
             return Ok(await _service.GetPostBySearch(searchInput));
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="categoryName">Råvaror/Utrustning/Bryggteknik/Övrigt/Recept</param>
+        /// <returns></returns>
         [AllowAnonymous]
         [HttpGet("byCategory")]
         public async Task<IActionResult> GetPostsByCategory(string categoryName)
         {
-            var allPosts = await _service.GetAllPosts();
-            return Ok(await _service.GetPostsByCategory(categoryName, allPosts));
+            try
+            {
+                var allPosts = await _service.GetAllPosts();
+                if (allPosts.Count == 0)
+                    return NoContent();
+                else
+                    return Ok(await _service.GetPostsByCategory(categoryName));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+
         }
         [Authorize]
         [HttpPost("newPost")]
         public async Task<IActionResult> NewPost(string categoryName, string postTitle, string postBody)
         {
-            var userId = await _jwtGetter.GetLoggedInUserId();
-            await _service.NewPost(postTitle, postBody, userId, categoryName);
-            return Ok("New post created successfully!");
+            try
+            {
+                var userId = await _jwtGetter.GetLoggedInUserId();
+                await _service.NewPost(postTitle, postBody, userId, categoryName);
+                return Ok("New post created successfully!");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [Authorize]
@@ -93,7 +112,7 @@ namespace BrewHub.Controllers
 
             if (post.UserId != userId)
                 return Forbid();
-            
+
             return BadRequest();
         }
 

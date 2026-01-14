@@ -9,6 +9,8 @@ namespace BrewHub.Data.Profiles
         public PostProfile()
         {
             CreateMap<Post, PostDTO>()
+                .ForMember(dest => dest.Id, 
+                    opt => opt.MapFrom(src => src.PostId))
                 .ForMember(dest => dest.Title,
                     opt => opt.MapFrom(src => src.PostTitle))
                 .ForMember(dest => dest.Body,
