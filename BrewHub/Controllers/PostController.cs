@@ -45,15 +45,16 @@ namespace BrewHub.Controllers
         /// <returns></returns>
         [AllowAnonymous]
         [HttpGet("byCategory")]
-        public async Task<IActionResult> GetPostsByCategory(string categoryName)
+        public async Task<IActionResult> GetPostsByCategory(int categoryId)
         {
+            if (categoryId < 1 || categoryId > 5) 
+            {
+                return BadRequest("Choose between 1 -5");
+            }
+
             try
             {
-                var allPosts = await _service.GetAllPosts();
-                if (allPosts.Count == 0)
-                    return NoContent();
-                else
-                    return Ok(await _service.GetPostsByCategory(categoryName));
+                return Ok(await _service.GetPostsByCategory(categoryId));
             }
             catch (Exception ex)
             {
@@ -64,12 +65,12 @@ namespace BrewHub.Controllers
         }
         [Authorize]
         [HttpPost("newPost")]
-        public async Task<IActionResult> NewPost(string categoryName, string postTitle, string postBody)
+        public async Task<IActionResult> NewPost(int categoryId, string postTitle, string postBody)
         {
             try
             {
                 var userId = await _jwtGetter.GetLoggedInUserId();
-                await _service.NewPost(postTitle, postBody, userId, categoryName);
+                await _service.NewPost(postTitle, postBody, userId, categoryId);
                 return Ok("New post created successfully!");
             }
             catch (Exception ex)
@@ -97,13 +98,13 @@ namespace BrewHub.Controllers
 
         [Authorize]
         [HttpPut("updatePost")]
-        public async Task<IActionResult> UpdatePost(int postId, string? postTitle, string? postBody, string? categoryName)
+        public async Task<IActionResult> UpdatePost(int postId, string? postTitle, string? postBody, int? categoryId)
         {
             var userId = await _jwtGetter.GetLoggedInUserId();
             var post = await _service.PostExists(postId);
             if (post.UserId == userId && post != null)
             {
-                await _service.UpdatePost(postTitle, postBody, categoryName, postId);
+                await _service.UpdatePost(postTitle, postBody, categoryId, postId);
                 return Ok("Post edited successfully!");
             }
 

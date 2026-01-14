@@ -34,15 +34,15 @@ namespace BrewHub.Core.Services
             return _mapper.Map<List<PostDTO>>(filteredPosts);
         }
 
-        public async Task<List<PostDTO>> GetPostsByCategory(string searchInput)
+        public async Task<List<PostDTO>> GetPostsByCategory(int categoryId)
         {
-            var filteredPosts = await _repo.GetPostByCategory(searchInput);
+            var filteredPosts = await _repo.GetPostByCategory(categoryId);
             return _mapper.Map<List<PostDTO>>(filteredPosts);
         }
 
-        public async Task NewPost(string postTitle, string postBody, int userId, string categoryName)
+        public async Task NewPost(string postTitle, string postBody, int userId, int categoryId)
         {
-            await _repo.NewPost(postTitle, postBody, userId, categoryName);
+            await _repo.NewPost(postTitle, postBody, userId, categoryId);
         }
 
         public async Task<Post> PostExists(int postId)
@@ -59,9 +59,9 @@ namespace BrewHub.Core.Services
             }
         }
 
-        public async Task UpdatePost(string? postTitle, string? postBody, string? categoryName, int postId)
+        public async Task UpdatePost(string? postTitle, string? postBody, int? categoryId, int postId)
         {
-            await _repo.UpdatePost(postTitle, postBody, categoryName, postId);
+            await _repo.UpdatePost(postTitle, postBody, categoryId, postId);
         }
     }
 }

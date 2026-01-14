@@ -8,9 +8,9 @@ namespace BrewHub.Core.Interfaces
         Task DeletePost(int postId, int userId);
         Task<List<PostDTO>> GetAllPosts();
         Task<List<PostDTO>> GetPostBySearch(string searchInput);
-        Task<List<PostDTO>> GetPostsByCategory(string searchInput);
-        Task NewPost(string postTitle, string postBody, int userId, string categoryName);
+        Task<List<PostDTO>> GetPostsByCategory(int categoryId);
+        Task NewPost(string postTitle, string postBody, int userId, int categoryId);
         Task<Post> PostExists(int postId);
-        Task UpdatePost(string? postTitle, string? postBody, string? categoryName, int postId);
+        Task UpdatePost(string? postTitle, string? postBody, int? categoryId, int postId);
     }
 }

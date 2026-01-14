@@ -33,27 +33,17 @@ namespace BrewHub.Data.Repos
             return await result;
         }
 
-        public async Task<List<Post>> GetPostByCategory(string categoryInput)
+        public async Task<List<Post>> GetPostByCategory(int categoryId)
         {
-            var categoryName = _context.Categories.Where(c => c.CategoryName == categoryInput).FirstOrDefault();
-            if (categoryName == null)
-            {
-                throw new Exception("No such category. Did you spell it correctly?");
-            }
-            else
-            {
-
-                var result = _context.Posts
-                    .Include(p => p.User)
-                    .Include(p => p.Category)
-                    .Include(p => p.Comments)
-                        .ThenInclude(c => c.User)
-                    .Where(p => p.Category.CategoryName == categoryInput)
-                    .AsNoTracking()
-                    .ToListAsync();
-                return await result;
-            }
-
+            var result = _context.Posts
+                .Include(p => p.User)
+                .Include(p => p.Category)
+                .Include(p => p.Comments)
+                    .ThenInclude(c => c.User)
+                .Where(p => p.Category.CategoryId == categoryId)
+                .AsNoTracking()
+                .ToListAsync();
+            return await result;
         }
 
         public async Task<List<Post>> GetPostBySearch(string searchInput)
@@ -70,10 +60,10 @@ namespace BrewHub.Data.Repos
             return result;
         }
 
-        public async Task NewPost(string postTitle, string postBody, int userId, string categoryName)
+        public async Task NewPost(string postTitle, string postBody, int userId, int categoryId)
         {
             var user = _context.Users.Find(userId);
-            var category = await _context.Categories.FirstOrDefaultAsync(c => c.CategoryName == categoryName);
+            var category = await _context.Categories.FirstOrDefaultAsync(c => c.CategoryId == categoryId);
             if (category == null)
             {
                 throw new Exception("No such categoy");
@@ -97,11 +87,11 @@ namespace BrewHub.Data.Repos
             return await _context.Posts.FindAsync(postId);
         }
 
-        public async Task UpdatePost(string? postTitle, string? postBody, string? categoryName, int postId)
+        public async Task UpdatePost(string? postTitle, string? postBody, int? categoryId, int postId)
         {
             var post = _context.Posts.Find(postId)!;
 
-            var category = _context.Categories.Find(categoryName);
+            var category = _context.Categories.Find(categoryId);
 
             if (postTitle != null)
             {
@@ -111,7 +101,7 @@ namespace BrewHub.Data.Repos
             {
                 post.PostBody = postBody;
             }
-            if (categoryName != null)
+            if (categoryId != null)
             {
                 if (category != null)
                 {
