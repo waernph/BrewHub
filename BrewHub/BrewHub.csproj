@@ -6,6 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>aeb35311-5615-4e60-98d3-6b6b2d92adc5</UserSecretsId>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -29,6 +30,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.23.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="10.0.1" />
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="10.0.1" />
   </ItemGroup>

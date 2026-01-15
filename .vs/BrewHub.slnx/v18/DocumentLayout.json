@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{D8FDA511-3893-1A73-6F16-03E75062C432}|BrewHub\\BrewHub.csproj|c:\\users\\waern\\documents\\dotnet\\dotnet_forts\\inl\u00E4mningsuppgifter\\brewhub\\brewhub\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{D8FDA511-3893-1A73-6F16-03E75062C432}|BrewHub\\BrewHub.csproj|solutionrelative:brewhub\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{D8FDA511-3893-1A73-6F16-03E75062C432}|BrewHub\\BrewHub.csproj|c:\\users\\waern\\documents\\dotnet\\dotnet_forts\\inl\u00E4mningsuppgifter\\brewhub\\brewhub\\data\\repos\\postrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D8FDA511-3893-1A73-6F16-03E75062C432}|BrewHub\\BrewHub.csproj|solutionrelative:brewhub\\data\\repos\\postrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -34,73 +38,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 10,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PostController.cs",
-              "DocumentMoniker": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Controllers\\PostController.cs",
-              "RelativeDocumentMoniker": "BrewHub\\Controllers\\PostController.cs",
-              "ToolTip": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Controllers\\PostController.cs",
-              "RelativeToolTip": "BrewHub\\Controllers\\PostController.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAowDEAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-14T14:17:02.098Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IPostService.cs",
-              "DocumentMoniker": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Core\\Interfaces\\IPostService.cs",
-              "RelativeDocumentMoniker": "BrewHub\\Core\\Interfaces\\IPostService.cs",
-              "ToolTip": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Core\\Interfaces\\IPostService.cs",
-              "RelativeToolTip": "BrewHub\\Core\\Interfaces\\IPostService.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAA9AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-14T14:16:51.371Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PostService.cs",
-              "DocumentMoniker": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Core\\Services\\PostService.cs",
-              "RelativeDocumentMoniker": "BrewHub\\Core\\Services\\PostService.cs",
-              "ToolTip": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Core\\Services\\PostService.cs",
-              "RelativeToolTip": "BrewHub\\Core\\Services\\PostService.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAADwvyYAAABIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-14T14:16:16.839Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "IPostRepo.cs",
-              "DocumentMoniker": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Data\\Interfaces\\IPostRepo.cs",
-              "RelativeDocumentMoniker": "BrewHub\\Data\\Interfaces\\IPostRepo.cs",
-              "ToolTip": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Data\\Interfaces\\IPostRepo.cs",
-              "RelativeToolTip": "BrewHub\\Data\\Interfaces\\IPostRepo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA5AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-14T14:16:03.254Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "PostRepo.cs",
-              "DocumentMoniker": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Data\\Repos\\PostRepo.cs",
-              "RelativeDocumentMoniker": "BrewHub\\Data\\Repos\\PostRepo.cs",
-              "ToolTip": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Data\\Repos\\PostRepo.cs",
-              "RelativeToolTip": "BrewHub\\Data\\Repos\\PostRepo.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAIAywCoAAABAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-14T14:13:20.714Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
@@ -143,7 +82,80 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Dockerfile",
+              "DocumentMoniker": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Dockerfile",
+              "RelativeDocumentMoniker": "BrewHub\\Dockerfile",
+              "ToolTip": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Dockerfile",
+              "RelativeToolTip": "BrewHub\\Dockerfile",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-01-14T19:42:16.234Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PostController.cs",
+              "DocumentMoniker": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Controllers\\PostController.cs",
+              "RelativeDocumentMoniker": "BrewHub\\Controllers\\PostController.cs",
+              "ToolTip": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Controllers\\PostController.cs",
+              "RelativeToolTip": "BrewHub\\Controllers\\PostController.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAowDEAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-14T14:17:02.098Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IPostService.cs",
+              "DocumentMoniker": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Core\\Interfaces\\IPostService.cs",
+              "RelativeDocumentMoniker": "BrewHub\\Core\\Interfaces\\IPostService.cs",
+              "ToolTip": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Core\\Interfaces\\IPostService.cs",
+              "RelativeToolTip": "BrewHub\\Core\\Interfaces\\IPostService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-14T14:16:51.371Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PostService.cs",
+              "DocumentMoniker": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Core\\Services\\PostService.cs",
+              "RelativeDocumentMoniker": "BrewHub\\Core\\Services\\PostService.cs",
+              "ToolTip": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Core\\Services\\PostService.cs",
+              "RelativeToolTip": "BrewHub\\Core\\Services\\PostService.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAADwvyYAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-14T14:16:16.839Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "IPostRepo.cs",
+              "DocumentMoniker": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Data\\Interfaces\\IPostRepo.cs",
+              "RelativeDocumentMoniker": "BrewHub\\Data\\Interfaces\\IPostRepo.cs",
+              "ToolTip": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Data\\Interfaces\\IPostRepo.cs",
+              "RelativeToolTip": "BrewHub\\Data\\Interfaces\\IPostRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-14T14:16:03.254Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PostRepo.cs",
+              "DocumentMoniker": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Data\\Repos\\PostRepo.cs",
+              "RelativeDocumentMoniker": "BrewHub\\Data\\Repos\\PostRepo.cs",
+              "ToolTip": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Data\\Repos\\PostRepo.cs",
+              "RelativeToolTip": "BrewHub\\Data\\Repos\\PostRepo.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAIAywCoAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-14T14:13:20.714Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Program.cs",
               "RelativeDocumentMoniker": "BrewHub\\Program.cs",
@@ -151,8 +163,7 @@
               "RelativeToolTip": "BrewHub\\Program.cs",
               "ViewState": "AgIAADUAAAAAAAAAAAAAABMAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-17T18:26:59.65Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-17T18:26:59.65Z"
             }
           ]
         },
