@@ -1,4 +1,4 @@
-# Inlämningsuppgift 1 för C#/.NET fortsättningskurs.
+# Inlämningsuppgift 1
 Philip Waern\
 JENSEN YH, Programmering med C# och .NET, fortsättning
 
