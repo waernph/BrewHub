@@ -1,4 +1,6 @@
 # Inlämningsuppgift 1 för C#/.NET fortsättningskurs.
+Philip Waern\
+JENSEN YH, Programmering med C# och .NET, fortsättning
 
 ### Beskrivning
 Uppgiften handlar om att skapa en databas med möjlighet att lagra olika
@@ -8,7 +10,7 @@ web api som skapas med ASP.NET web api, genom vilket det finns möjlighet att
 kommunicera med databasen (via EF). Det skall gå att komma åt all
 funktionalitet genom att anropa alla metoder i web api:et via POSTMAN.
 
-### Kravspec
+### Kravspecifikation
 - Det skall gå att lägga upp ett användarkonto med användarnamn, lösenord
 och email. En användare skall kunna logga in. Det skall även gå att uppdatera
 samt ta bort ett användarkonto. När en användare loggar in skall användarid
