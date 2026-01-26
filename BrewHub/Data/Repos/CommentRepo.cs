@@ -1,6 +1,5 @@
 ﻿using BrewHub.Data.Entities;
 using BrewHub.Data.Interfaces;
-using Microsoft.EntityFrameworkCore;
 
 namespace BrewHub.Data.Repos
 {

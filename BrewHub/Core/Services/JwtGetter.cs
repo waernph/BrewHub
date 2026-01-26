@@ -1,6 +1,4 @@
 ﻿using BrewHub.Core.Interfaces;
-using BrewHub.Data.Entities;
-using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
 
 namespace BrewHub.Core.Services
@@ -16,7 +14,7 @@ namespace BrewHub.Core.Services
 
         public async Task<int> GetLoggedInUserId()
         {
-            return int.Parse(_jwt.HttpContext.User.FindFirst(ClaimTypes.UserData).Value);
+            return int.Parse(_jwt.HttpContext!.User.FindFirst(ClaimTypes.UserData)!.Value);
         }
     }
 }

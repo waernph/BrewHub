@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace BrewHub.Data.Entities
+﻿namespace BrewHub.Data.Entities
 {
     public class Post
     {

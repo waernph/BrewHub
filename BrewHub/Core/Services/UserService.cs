@@ -1,12 +1,9 @@
-﻿using AutoMapper;
-using BrewHub.Core.Interfaces;
-using BrewHub.Data.DTO;
-using BrewHub.Data.Entities;
+﻿using BrewHub.Core.Interfaces;
 using BrewHub.Data.Interfaces;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
-using System.Text;
+
 
 namespace BrewHub.Core.Services
 {

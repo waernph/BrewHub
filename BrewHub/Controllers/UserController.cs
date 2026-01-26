@@ -1,7 +1,4 @@
-﻿using AutoMapper;
-using BrewHub.Core.Interfaces;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using BrewHub.Core.Interfaces;
 
 namespace BrewHub.Controllers
 {

@@ -1,6 +1,4 @@
-﻿using AutoMapper;
-
-namespace BrewHub.Data.Profiles
+﻿namespace BrewHub.Data.Profiles
 {
     public class CategoryProfile : Profile
     {

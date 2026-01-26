@@ -1,0 +1,9 @@
+﻿global using Microsoft.EntityFrameworkCore;
+global using BrewHub.Data.Profiles;
+global using System.Reflection;
+global using System.Text;
+global using AutoMapper;
+global using BrewHub.Data.DTO;
+global using System.ComponentModel.DataAnnotations;
+global using Microsoft.AspNetCore.Authorization;
+global using Microsoft.AspNetCore.Mvc;

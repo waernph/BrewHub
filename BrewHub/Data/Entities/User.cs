@@ -1,7 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.Diagnostics.CodeAnalysis;
-
-namespace BrewHub.Data.Entities
+﻿namespace BrewHub.Data.Entities
 {
     public class User
     {

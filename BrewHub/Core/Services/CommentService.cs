@@ -1,7 +1,5 @@
 ﻿using BrewHub.Core.Interfaces;
-using BrewHub.Data.Entities;
 using BrewHub.Data.Interfaces;
-using System.Net;
 
 namespace BrewHub.Core.Services
 {

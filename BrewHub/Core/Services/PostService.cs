@@ -1,6 +1,4 @@
-﻿using AutoMapper;
-using BrewHub.Core.Interfaces;
-using BrewHub.Data.DTO;
+﻿using BrewHub.Core.Interfaces;
 using BrewHub.Data.Entities;
 using BrewHub.Data.Interfaces;
 

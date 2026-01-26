@@ -1,6 +1,5 @@
 ﻿using BrewHub.Data.Entities;
 using BrewHub.Data.Interfaces;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 
 namespace BrewHub.Data.Repos
@@ -74,10 +73,6 @@ namespace BrewHub.Data.Repos
 
             _context.Users.Update(user);
             await _context.SaveChangesAsync();
-
-
-
-
         }
     }
 }
