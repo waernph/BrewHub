@@ -1,0 +1,24 @@
+﻿@model List<BrewHub_App.Models.PostDTO>
+@{
+    ViewData["Title"] = "All Posts";
+}
+<h1>All Posts</h1>
+@foreach(var post in Model)
+{
+    <div class="post">
+        <h3>@post.Title</h3>
+        <p>@post.Body</p>
+        <small>Comments</small><br />
+        @foreach(var comment in post.Comments)
+        {
+            <div class="comment" style="margin-left:20px;">
+                <small>@comment.User.Username:</small> @comment.Comments<br />
+                <small>@comment.Date.ToString("MM/dd/yyyy")</small>
+            </div>
+        }
+        <small>Posted by: @post.User.Username</small>
+        <small>Posted on: @post.Date.ToString("MM/dd/yyyy")</small>
+    </div>
+    <hr />
+}
+)

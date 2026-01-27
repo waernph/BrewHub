@@ -14,13 +14,7 @@ using System.Text;
 var builder = WebApplication.CreateBuilder(args);
 var apiKey = builder.Configuration["ApiKey"] !;  //Secret key för JWT
 string connString =  builder.Configuration["connString"] !;
-//automapper
-builder.Services.AddAutoMapper(cfg =>
-{
-    cfg.AddProfile<UserProfile>();
-}, typeof(UserProfile));
-
-//JWT
+builder.Services.AddAutoMapperProfiles();
 builder.Services.AddAuthentication(opt =>
 {
     opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -77,8 +71,14 @@ app.UseAuthentication();
 
 //--------------------
 app.UseRouting();
+app.UseCors(builder =>
+{
+    builder.WithOrigins("http://localhost:5127")
+           .AllowAnyMethod()
+           .AllowAnyHeader();
+});
 app.UseAuthorization();
-app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
+app.UseEndpoints(endpoints => { _ = endpoints.MapControllers(); });
 app.UseSwagger();
 app.UseSwaggerUI();
 
