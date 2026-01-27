@@ -1,4 +1,6 @@
-﻿namespace BrewHub.Extensions
+﻿using BrewHub.Data.Profiles;
+
+namespace BrewHub.Extensions
 {
     public static class AutoMapperCollection
     {

@@ -3,6 +3,7 @@ using BrewHub.Core.Services;
 using BrewHub.Data.Interfaces;
 using BrewHub.Data.Profiles;
 using BrewHub.Data.Repos;
+using BrewHub.Extensions;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
