@@ -58,6 +58,7 @@ builder.Services.AddSwaggerGen(options =>
 builder.Services.AddDbContext<BrewHub.Data.BrewHubContext>(options =>
     options.UseSqlServer(connString));
 
+builder.Services.AddCors();
 builder.Services.AddScoped<IPostRepo, PostRepo>();
 builder.Services.AddScoped<IUserRepo, UserRepo>();
 builder.Services.AddScoped<ICommentRepo, CommentRepo>();
