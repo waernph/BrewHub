@@ -4093,11 +4093,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inlämningsuppgifter\\BrewHub\\BrewHub\\BrewHub.csproj",
+      "projectUniqueName": "C:\\Users\\waern\\Documents\\dotnet\\BrewHub\\BrewHub\\BrewHub.csproj",
       "projectName": "BrewHub",
-      "projectPath": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inlämningsuppgifter\\BrewHub\\BrewHub\\BrewHub.csproj",
+      "projectPath": "C:\\Users\\waern\\Documents\\dotnet\\BrewHub\\BrewHub\\BrewHub.csproj",
       "packagesPath": "C:\\Users\\waern\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inlämningsuppgifter\\BrewHub\\BrewHub\\obj\\",
+      "outputPath": "C:\\Users\\waern\\Documents\\dotnet\\BrewHub\\BrewHub\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

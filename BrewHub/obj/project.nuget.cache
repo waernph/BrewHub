@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RvPKCadzk34=",
+  "dgSpecHash": "pfHB6qzQSsY=",
   "success": true,
-  "projectFilePath": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inlämningsuppgifter\\BrewHub\\BrewHub\\BrewHub.csproj",
+  "projectFilePath": "C:\\Users\\waern\\Documents\\dotnet\\BrewHub\\BrewHub\\BrewHub.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\waern\\.nuget\\packages\\automapper\\16.0.0\\automapper.16.0.0.nupkg.sha512",
     "C:\\Users\\waern\\.nuget\\packages\\azure.core\\1.47.1\\azure.core.1.47.1.nupkg.sha512",

@@ -1,25 +1,25 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\",
+  "WorkspaceRootPath": "C:\\Users\\waern\\Documents\\dotnet\\BrewHub\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D8FDA511-3893-1A73-6F16-03E75062C432}|BrewHub\\BrewHub.csproj|c:\\users\\waern\\documents\\dotnet\\dotnet_forts\\inl\u00E4mningsuppgifter\\brewhub\\brewhub\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{D8FDA511-3893-1A73-6F16-03E75062C432}|BrewHub\\BrewHub.csproj|c:\\users\\waern\\documents\\dotnet\\brewhub\\brewhub\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{D8FDA511-3893-1A73-6F16-03E75062C432}|BrewHub\\BrewHub.csproj|solutionrelative:brewhub\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D8FDA511-3893-1A73-6F16-03E75062C432}|BrewHub\\BrewHub.csproj|c:\\users\\waern\\documents\\dotnet\\dotnet_forts\\inl\u00E4mningsuppgifter\\brewhub\\brewhub\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D8FDA511-3893-1A73-6F16-03E75062C432}|BrewHub\\BrewHub.csproj|c:\\users\\waern\\documents\\dotnet\\brewhub\\brewhub\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D8FDA511-3893-1A73-6F16-03E75062C432}|BrewHub\\BrewHub.csproj|solutionrelative:brewhub\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D8FDA511-3893-1A73-6F16-03E75062C432}|BrewHub\\BrewHub.csproj|c:\\users\\waern\\documents\\dotnet\\dotnet_forts\\inl\u00E4mningsuppgifter\\brewhub\\brewhub\\core\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D8FDA511-3893-1A73-6F16-03E75062C432}|BrewHub\\BrewHub.csproj|c:\\users\\waern\\documents\\dotnet\\brewhub\\brewhub\\core\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D8FDA511-3893-1A73-6F16-03E75062C432}|BrewHub\\BrewHub.csproj|solutionrelative:brewhub\\core\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D8FDA511-3893-1A73-6F16-03E75062C432}|BrewHub\\BrewHub.csproj|c:\\users\\waern\\documents\\dotnet\\dotnet_forts\\inl\u00E4mningsuppgifter\\brewhub\\brewhub\\brewhub.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "AbsoluteMoniker": "D:0:0:{D8FDA511-3893-1A73-6F16-03E75062C432}|BrewHub\\BrewHub.csproj|c:\\users\\waern\\documents\\dotnet\\brewhub\\brewhub\\brewhub.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{D8FDA511-3893-1A73-6F16-03E75062C432}|BrewHub\\BrewHub.csproj|solutionrelative:brewhub\\brewhub.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D8FDA511-3893-1A73-6F16-03E75062C432}|BrewHub\\BrewHub.csproj|c:\\users\\waern\\documents\\dotnet\\dotnet_forts\\inl\u00E4mningsuppgifter\\brewhub\\brewhub\\data\\interfaces\\ipostrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D8FDA511-3893-1A73-6F16-03E75062C432}|BrewHub\\BrewHub.csproj|c:\\users\\waern\\documents\\dotnet\\brewhub\\brewhub\\data\\interfaces\\ipostrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D8FDA511-3893-1A73-6F16-03E75062C432}|BrewHub\\BrewHub.csproj|solutionrelative:brewhub\\data\\interfaces\\ipostrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -30,21 +30,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 12,
+          "SelectedChildIndex": 9,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Core\\Services\\UserService.cs",
-              "RelativeDocumentMoniker": "BrewHub\\Core\\Services\\UserService.cs",
-              "ToolTip": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Core\\Services\\UserService.cs",
-              "RelativeToolTip": "BrewHub\\Core\\Services\\UserService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-08T10:56:25.144Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
@@ -82,41 +69,51 @@
               "Name": "ST:131:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\waern\\Documents\\dotnet\\BrewHub\\BrewHub\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "BrewHub\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\waern\\Documents\\dotnet\\BrewHub\\BrewHub\\Properties\\launchSettings.json",
+              "RelativeToolTip": "BrewHub\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-03-10T13:27:01.06Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\waern\\Documents\\dotnet\\BrewHub\\BrewHub\\Core\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "BrewHub\\Core\\Services\\UserService.cs",
+              "ToolTip": "C:\\Users\\waern\\Documents\\dotnet\\BrewHub\\BrewHub\\Core\\Services\\UserService.cs",
+              "RelativeToolTip": "BrewHub\\Core\\Services\\UserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-08T10:56:25.144Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "BrewHub.csproj",
-              "DocumentMoniker": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\BrewHub.csproj",
+              "DocumentMoniker": "C:\\Users\\waern\\Documents\\dotnet\\BrewHub\\BrewHub\\BrewHub.csproj",
               "RelativeDocumentMoniker": "BrewHub\\BrewHub.csproj",
-              "ToolTip": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\BrewHub.csproj",
+              "ToolTip": "C:\\Users\\waern\\Documents\\dotnet\\BrewHub\\BrewHub\\BrewHub.csproj",
               "RelativeToolTip": "BrewHub\\BrewHub.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-02-12T12:04:04.311Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "BrewHub\\Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Properties\\launchSettings.json",
-              "RelativeToolTip": "BrewHub\\Properties\\launchSettings.json",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-02-12T12:01:32.509Z",
+              "WhenOpened": "2026-02-12T12:04:04.311Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\waern\\Documents\\dotnet\\BrewHub\\BrewHub\\Program.cs",
               "RelativeDocumentMoniker": "BrewHub\\Program.cs",
-              "ToolTip": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Program.cs",
+              "ToolTip": "C:\\Users\\waern\\Documents\\dotnet\\BrewHub\\BrewHub\\Program.cs",
               "RelativeToolTip": "BrewHub\\Program.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -127,13 +124,14 @@
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "IPostRepo.cs",
-              "DocumentMoniker": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Data\\Interfaces\\IPostRepo.cs",
+              "DocumentMoniker": "C:\\Users\\waern\\Documents\\dotnet\\BrewHub\\BrewHub\\Data\\Interfaces\\IPostRepo.cs",
               "RelativeDocumentMoniker": "BrewHub\\Data\\Interfaces\\IPostRepo.cs",
-              "ToolTip": "C:\\Users\\waern\\Documents\\dotnet\\dotnet_forts\\Inl\u00E4mningsuppgifter\\BrewHub\\BrewHub\\Data\\Interfaces\\IPostRepo.cs",
+              "ToolTip": "C:\\Users\\waern\\Documents\\dotnet\\BrewHub\\BrewHub\\Data\\Interfaces\\IPostRepo.cs",
               "RelativeToolTip": "BrewHub\\Data\\Interfaces\\IPostRepo.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAqwAcAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-14T14:16:03.254Z"
+              "WhenOpened": "2026-01-14T14:16:03.254Z",
+              "EditorCaption": ""
             }
           ]
         },
